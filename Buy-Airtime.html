@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Buy-Airtime.css">
+
+  <title>Buy Airtime --QuickSub</title>
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="top">
+  <div class="left-arrow-div">
+<a href="index.html">
+<p id="left-arrow-p">&#x276E;</p>
+</a>
+  </div>
+  <div class="buy-airtime-div">
+<p id="buy-airtime-p">Buy Airtime</p>
+  </div>
+  </div>
+<br><br>
+<br>
+
+  <div class="main-body-div">
+  <div class="select-network-div">
+<p id="select-network-p">Select Network</p>
+  <div class="four-networks-div">
+  <div class="network-div">
+<img src="Images/MTN-Logo.jpg" class="network-img" id="mtn-logo">
+  </div>
+  <div class="network-div">
+<img src="Images/Airtel-Logo.jpg" class="network-img" id="airtel-logo">
+  </div>
+  <div class="network-div">
+<img src="Images/Glo-Logo.jpg" class="network-img" id="glo-logo">
+  </div>
+  <div class="network-div">
+<img src="Images/9Mobile-Logo.jpg" class="network-img" id="nine-mobile-logo">
+  </div>
+  </div>
+  </div>
+
+  <div class="phone-number-div">
+<p id="phone-number-p">Phone Number</p>
+  <div class="phone-input-div">
+<input type="tel" id="phone-input" placeholder="081 2345 6789" minlength="11" maxlength="11" data-mask="000 0000 0000" required>
+<img src="Images/Cancel.svg" id="erase-input">
+  </div>
+  </div>
+  </div>
+
+<p id="select-airtime-amount-p">Airtime Amount</p>
+  <div class="select-airtime-amount-div">
+  <div class="airtime-bundle-div">
+  <div class="each-bundle-div">
+<p class="bundle-p">&#8358;200</p>
+<!-- <p class="duration-p">7 Days</p> -->
+<p class="amount-p">Pay &#8358;198</p>
+  </div>
+  <div class="each-bundle-div">
+<p class="bundle-p">&#8358;300</p>
+<!-- <p class="duration-p">7 Days</p> -->
+<p class="amount-p">Pay &#8358;295</p>
+  </div>
+  <div class="each-bundle-div">
+<p class="bundle-p">&#8358;500</p>
+<!-- <p class="duration-p">7 Days</p> -->
+<p class="amount-p">Pay &#8358;495</p>
+  </div>
+
+  <div class="each-bundle-div">
+<p class="bundle-p">&#8358;1,000</p>
+<!-- <p class="duration-p">7 Days</p> -->
+<p class="amount-p">Pay &#8358;990</p>
+  </div>
+  <div class="each-bundle-div">
+<p class="bundle-p">&#8358;2,000</p>
+<!-- <p class="duration-p">7 Days</p> -->
+<p class="amount-p">Pay &#8358;1,980</p>
+  </div>
+  <div class="each-bundle-div">
+<p class="bundle-p">&#8358;5,000</p>
+<!-- <p class="duration-p">7 Days</p> -->
+<p class="amount-p">Pay &#8358;4,900</p>
+  </div>
+  </div>
+
+  <div class="manual-amount-div">
+<p id="naira-sign">&#8358;</p>
+<input type="number" id="manual-input" placeholder="200-50,000" minlength="3" maxlength="6" autocomplete="none">
+<button id="manual-pay-button" disabled>Pay</button>
+  </div>
+<hr id="seperator-manual">
+  </div>
+
+<div class="transparent-bg"></div>
+
+  <div class="authorization-screen-div">
+  <div class="authorization-cancel-div">
+<p id="authorization-screen-p">Authorization Screen</p>
+<img src="Images/Cancel.svg" id="cancel-svg">
+  </div>
+
+  <div class="dark-bg-div">
+  <div class="you-are-buying-div">
+  <div class="network-img-div">
+<img src="Images/MTN-Logo.jpg" id="network-img">
+  </div>
+  <div class="network-bundle-div">
+<p id="network-purchase"><span id="network-p">{9Mobile}</span> Airtime Purchase</p>
+<p id="bundle-p">{5GB} <span id="duration-p">{30 Days}</span></p>
+  </div>
+  </div>
+<hr class="seperator">
+
+  <div class="mobile-number-div">
+<p id="mobile-no-p">Mobile Number</p>
+<p id="mobile-number-p">{08066866109}</p>
+  </div>
+  </div>
+<br>
+
+  <div class="total-amount-div">
+<p id="total-p">Total</p>
+<p id="amount-p">{&#8358;2,500.00}</p>
+  </div>
+
+  <div class="payment-method-div">
+<p id="payment-method-p">PAYMENT METHOD</p>
+  <div class="left-right-divs">
+  <div class="left-div">
+<p id="wallet-p">Wallet</p>
+<p id="balance-p">BALANCE: <span id="balance-amount">{&#8358;27,500.00}</span></p>
+  </div>
+  <div class="right-div">
+<img src="Images/Checked.svg" id="checked-svg">
+  </div>
+  </div>
+  </div>
+
+  <div class="pay-button-div">
+<button id="pay-button">Pay {&#8358;2,500.00}</button>
+  </div>
+  </div>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+// Network Prefixes
+const networkPrefixes = {
+  "MTN": ["0703", "0706", "0803", "0806", "0810", "0813", "0814", "0816", "0903", "0906", "0913", "0916"],
+  "Airtel": ["0701", "0708", "0802", "0808", "0812", "0901", "0902", "0904", "0907", "0912"],
+  "Glo": ["0705", "0805", "0807", "0811", "0815", "0905", "0915"],
+  "9Mobile": ["0809", "0817", "0818", "0908", "0909"]
+};
+var currentNetwork = ""; // Default network
+
+var mtnLogo = document.getElementById("mtn-logo");
+var airtelLogo = document.getElementById("airtel-logo");
+var gloLogo = document.getElementById("glo-logo");
+var nineMobileLogo = document.getElementById("nine-mobile-logo");
+
+//localStorage.setItem("quicksubMainBalance", 32600);
+var storedNumber = localStorage.getItem("quicksubPhoneNumber") || "0";
+var mainBalance = localStorage.getItem("quicksubMainBalance") || "0";
+var phoneInput = document.getElementById("phone-input");
+var eraseInput = document.getElementById("erase-input");
+let phoneNumber, clearPayPrice = null;
+let bundleName = null;
+
+function enlargeNetworkImg() {
+  // First, reset all network images to default size
+  var networkImages = document.querySelectorAll(".network-img");
+networkImages.forEach(networkImg => {
+  networkImg.style.width = "50px";
+  networkImg.style.height = "50px";
+  networkImg.style.border = "1px solid #E0E0E0";
+});
+
+  // Then, enlarge only the current network's logo
+if (currentNetwork === "MTN") {
+  mtnLogo.style.width = "60px";
+  mtnLogo.style.height = "60px";
+  mtnLogo.style.border = "2px solid #FFFFFF";
+} else if (currentNetwork === "Airtel") {
+  airtelLogo.style.width = "60px";
+  airtelLogo.style.height = "60px";
+  airtelLogo.style.border = "2px solid #FFFFFF";
+} else if (currentNetwork === "Glo") {
+  gloLogo.style.width = "60px";
+  gloLogo.style.height = "60px";
+  gloLogo.style.border = "2px solid #FFFFFF";
+} else if (currentNetwork === "9Mobile") {
+  nineMobileLogo.style.width = "60px";
+  nineMobileLogo.style.height = "60px";
+  nineMobileLogo.style.border = "2px solid #FFFFFF";
+}
+}
+enlargeNetworkImg();
+
+function detectNetworkFromNumber() {
+  // Get phone number and clean it
+  let phoneNumber = phoneInput.value.replace(/\D/g, '');
+  // Reset currentNetwork first
+  currentNetwork = "";
+// Get the first 4 digits if available
+if (phoneNumber.length >= 4) {
+  let prefix = phoneNumber.substring(0, 4);
+// Check which network the prefix belongs to
+for (let network in networkPrefixes) {
+if (networkPrefixes[network].includes(prefix)) {
+  currentNetwork = network;
+  break;
+}
+}
+}
+
+// Update UI based on detected network
+  enlargeNetworkImg();
+}
+
+function enlargeNetworkImg() {
+  // First, reset all network images to default size
+  var networkImages = document.querySelectorAll(".network-img");
+networkImages.forEach(networkImg => {
+  networkImg.style.width = "50px";
+  networkImg.style.height = "50px";
+  networkImg.style.border = "1px solid #E0E0E0";
+});
+
+// Only enlarge if a valid network was detected
+if (currentNetwork) {
+if (currentNetwork === "MTN") {
+  mtnLogo.style.width = "60px";
+  mtnLogo.style.height = "60px";
+  mtnLogo.style.border = "2px solid #FFFFFF";
+} else if (currentNetwork === "Airtel") {
+  airtelLogo.style.width = "60px";
+  airtelLogo.style.height = "60px";
+  airtelLogo.style.border = "2px solid #FFFFFF";
+} else if (currentNetwork === "Glo") {
+  gloLogo.style.width = "60px";
+  gloLogo.style.height = "60px";
+  gloLogo.style.border = "2px solid #FFFFFF";
+} else if (currentNetwork === "9Mobile") {
+  nineMobileLogo.style.width = "60px";
+  nineMobileLogo.style.height = "60px";
+  nineMobileLogo.style.border = "2px solid #FFFFFF";
+}
+}
+}
+
+phoneInput.addEventListener("input", detectNetworkFromNumber);
+
+if (phoneInput.value) {
+  detectNetworkFromNumber();
+}
+
+phoneInput.value = `${storedNumber}`;
+detectNetworkFromNumber();
+// Apply the mask to the existing value
+$(phoneInput).val($(phoneInput).val()).trigger('input');
+eraseInput.addEventListener("click", function() {
+  phoneInput.value = "";
+  detectNetworkFromNumber();
+});
+
+mtnLogo.addEventListener("click", function() {
+  currentNetwork = "MTN";
+  enlargeNetworkImg();
+});
+airtelLogo.addEventListener("click", function() {
+  currentNetwork = "Airtel";
+  enlargeNetworkImg();
+});
+gloLogo.addEventListener("click", function() {
+  currentNetwork = "Glo";
+  enlargeNetworkImg();
+});
+nineMobileLogo.addEventListener("click", function() {
+  currentNetwork = "9Mobile";
+  enlargeNetworkImg();
+});
+
+
+var authorizationScreen = document.querySelector(".authorization-screen-div");
+var transparentBg = document.querySelector(".transparent-bg");
+var phoneInput = document.getElementById("phone-input");
+var manualInput = document.getElementById("manual-input");
+var manualPayButton = document.getElementById("manual-pay-button");
+var manualAmountValue = manualInput.value;
+var bundleDivs = document.querySelectorAll(".each-bundle-div");
+var cancelSvg = document.getElementById("cancel-svg");
+var payButton = document.getElementById("pay-button");
+let selectedAmount = "";
+let selectedPhoneNumber = "";
+
+
+function hideAuthorizationScreen() {
+  authorizationScreen.style.display = "none";
+  transparentBg.style.display = "none";
+}
+function showAuthorizationScreen() {
+  authorizationScreen.style.display = "block";
+  transparentBg.style.display = "block";
+}
+
+cancelSvg.addEventListener("click", function() {
+  hideAuthorizationScreen();
+});
+
+manualInput.addEventListener("input", function() {
+/*
+var manualInputValue = manualInput.value;
+var formattedManualInputValue = Number(manualInputValue).toLocaleString();
+manualInput.value = formattedManualInputValue;
+*/
+if (manualInput.value > 199) {
+  manualPayButton.disabled = false;
+} else {
+  manualPayButton.disabled = true;
+}
+});
+
+
+manualPayButton.addEventListener("click", function() {
+  let phoneNumber = phoneInput.value.replace(/\D/g, "");
+  let prefix = phoneNumber.substring(0, 4);
+if (phoneNumber.length < 11) {
+  alert("Enter a valid Phone Number");
+} else {
+  var payPrice = manualInput.value;
+  var clearPayPrice = manualInput.value;
+  payPrice = Number(payPrice).toLocaleString(); //Adds the thousand commas!
+  selectedPhoneNumber = phoneNumber;
+  selectedAmount = payPrice;
+  var networkImg = document.getElementById("network-img");
+  var networkP = document.getElementById("network-p");
+  var amountP = document.getElementById("bundle-p");
+  var totalAmountP = document.getElementById("amount-p");
+  var mobileNumberP = document.getElementById("mobile-number-p");
+  var balanceAmountP = document.getElementById("balance-amount");
+  networkImg.src = "Images/" + currentNetwork + "-Logo.jpg";
+  networkP.textContent = currentNetwork;
+  amountP.innerHTML = `&#8358;${payPrice}.00`;
+  totalAmountP.innerHTML = `&#8358;${payPrice}.00`;
+  mobileNumberP.textContent = phoneNumber;
+  var formattedBalance = Number(mainBalance).toLocaleString();
+  balanceAmountP.innerHTML = `&#8358;${formattedBalance}.00`;
+  payButton.innerHTML = `Pay &#8358;${payPrice}.00`;
+  showAuthorizationScreen();
+}
+});
+
+cancelSvg.addEventListener("click", function() {
+  hideAuthorizationScreen();
+});
+
+bundleDivs.forEach(function(Div) {
+Div.addEventListener("click", function() {
+  let phoneNumber = phoneInput.value.replace(/\D/g, "");
+  let prefix = phoneNumber.substring(0, 4);
+if (phoneNumber.length < 11) {
+  alert("Enter a valid Phone Number");
+} else {
+  var payPrice = Div.querySelector(".amount-p").textContent.replace(/\D/g, "");
+  var clearPayPrice = Div.querySelector(".amount-p").textContent.replace(/\D/g, "");
+  payPrice = Number(payPrice).toLocaleString(); //Adds the thousand commas!
+  selectedPhoneNumber = phoneNumber;
+  selectedAmount = payPrice;
+  var networkImg = document.getElementById("network-img");
+  var networkP = document.getElementById("network-p");
+  var amountP = document.getElementById("bundle-p");
+  var totalAmountP = document.getElementById("amount-p");
+  var mobileNumberP = document.getElementById("mobile-number-p");
+  var balanceAmountP = document.getElementById("balance-amount");
+  networkImg.src = "Images/" + currentNetwork + "-Logo.jpg";
+  networkP.textContent = currentNetwork;
+  amountP.innerHTML = `&#8358;${payPrice}.00`;
+  totalAmountP.innerHTML = `&#8358;${payPrice}.00`;
+  mobileNumberP.textContent = phoneNumber;
+  var formattedBalance = Number(mainBalance).toLocaleString();
+  balanceAmountP.innerHTML = `&#8358;${formattedBalance}.00`;
+  payButton.innerHTML = `Pay &#8358;${payPrice}.00`;
+  showAuthorizationScreen();
+}
+});
+});
+
+payButton.addEventListener("click", function() {
+// alert("Pay Button Tapped");
+let balanceText = document.getElementById('balance-amount').textContent;
+let balance = parseFloat(balanceText.replace(/[^\d.]/g, ''));
+let amountText = document.getElementById('amount-p').textContent;
+let amount = parseFloat(amountText.replace(/[^\d.]/g, ''));
+var bundleAmount = Number(amount).toLocaleString();
+var bundleAmount = `₦${bundleAmount}`;
+var bundleName = `${currentNetwork} ${bundleAmount}`;
+if (balance >= amount) {
+  let newBalance = balance - amount;
+  localStorage.setItem('quicksubMainBalance', newBalance);
+
+
+function generateSessionID() {
+  let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let sessionID = "";
+  for (let i = 0; i < 25; i++) {
+  sessionID += characters.charAt(Math.floor(Math.random() * characters.length));
+}
+  return sessionID;
+}
+let transactionHistory = JSON.parse(localStorage.getItem("quicksubTransactions")) || [];
+let transaction = {
+  type: `${currentNetwork} Airtime Topup`,
+  amount: `₦${selectedAmount}`,
+  number: `${selectedPhoneNumber}`,
+  time: new Date().toLocaleString(),
+  sessionID: generateSessionID()
+};
+transactionHistory.push(transaction);
+localStorage.setItem("quicksubTransactions", JSON.stringify(transactionHistory));
+
+// Encrypt the purchased bundle (basic encryption using btoa)
+//let bundleName = bundleName;
+  let encryptedBundle = btoa(encodeURIComponent(bundleName));
+
+// Redirect to Successful.html with encrypted query
+window.location.href = `Successful.html?data=${encryptedBundle}`;
+//alert(JSON.stringify(transaction, null, 2));
+} else {
+  alert("You do not have sufficient funds in your wallet.");
+}
+});
+
+
+
+
+
+
+});
+  </script>
+
+</body>
+</html>

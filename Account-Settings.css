@@ -1,0 +1,298 @@
+.container {
+ margin: 0 auto;
+ width: 95%;
+ padding: 7px;
+ border: 1px solid transparent;
+ border-radius: 8px;
+ background-color: #303030;
+}
+.top {
+  position: fixed;
+  top: 0;
+  margin: -7px;
+  padding: 0 10px 0 10px;
+  width: 95%;
+  border: none;
+  color: #FFF;
+  background-color: #303030;
+  z-index: 1000;
+}
+#account-settings-p {
+  font-weight: 500;
+  text-align: center;
+}
+
+.top-and-main-body {
+  border: none;
+}
+
+.profile-pic-and-infos {
+display: flex;
+flex-direction: column;
+align-items: center;
+color: #A2A2A2;
+}
+.profile-pic-and-infos * {
+  margin: 2px;
+}
+.profile-pic-and-infos p {
+  font-size: 14px;
+}
+.profile-pic-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  color: #E0E0E0;
+  background-color: #00A86B;
+}
+#profile-pic-letter {
+  font-size: 40px;
+  font-weight: 500;
+  color: #E0E0E0;
+}
+#full-name {
+  font-size: 20px;
+}
+
+.settings-div {
+  padding: 20px 0 20px 0;
+  border-radius: 15px;
+  color: #FFF;
+  background-color: #373737;
+}
+.account-information {
+  position: relative;;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+#account-information-svg {
+  width: 35px;
+}
+.account-information-texts {
+  margin-left: 8px;
+}
+.account-information-texts * {
+  margin: 0;
+}
+#account-information-p {
+  font-size: 17px;
+  font-weight: 500;
+}
+#update-account-information-p {
+  font-size: 12px;
+  color: #C6C6C6;
+}
+.arrow-right-div {
+  position: absolute;
+  top: -5px;
+  right: 15px;
+}
+
+.seperator {
+  width: 95%;
+  border: none;
+  height: 0.1px;
+  margin-top: 1px;
+  color: grey;
+  background-color: grey;
+}
+
+.account-security {
+  position: relative;;
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+#account-security-svg {
+  width: 35px;
+}
+.account-security-texts {
+  margin-left: 8px;
+}
+.account-security-texts * {
+  margin: 0;
+}
+#account-security-p {
+  font-size: 17px;
+  font-weight: 500;
+}
+#change-security-settings-p {
+  font-size: 12px;
+  color: #c6c6c6;
+}
+
+.account-verification {
+  position: relative;;
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+#account-verification-svg {
+  width: 35px;
+}
+.account-verification-texts {
+  margin-left: 8px;
+}
+.account-verification-texts * {
+  margin: 0;
+}
+#account-verification-p {
+  font-size: 17px;
+  font-weight: 500;
+}
+#verify-your-account-p {
+  font-size: 12px;
+  color: #c6c6c6;
+}
+
+.application-settings {
+  position: relative;;
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+#application-settings-svg {
+  width: 35px;
+}
+.application-settings-texts {
+  margin-left: 8px;
+}
+.application-settings-texts * {
+  margin: 0;
+}
+#application-settings-p {
+  font-size: 17px;
+  font-weight: 500;
+}
+#change-app-settings-p {
+  font-size: 12px;
+  color: #c6c6c6;
+}
+
+.logout-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#logout-svg {
+  width: 30px;
+}
+#logout-p {
+  font-size: 22px;
+  font-weight: 500;
+  color: #E0E0E0;
+  color: #DC4C41;
+}
+
+.reset-section {
+  display: none;
+  color: #FFF;
+}
+.resets-top {
+  position: fixed;
+  display: flex;
+  margin: -7px;
+  padding: 0 10px 0 10px;
+  top: 0;
+  width: 94%;
+  border: none;
+  background-color: #303030;
+  z-index: 101;
+}
+.extra-top-div {
+  margin: 0 auto;
+  font-weight: 500;
+}
+.change-password-and-pin-div {
+  display: flex;
+  flex-direction: column;
+  margin-top: -15px;
+  padding: 0 10px;
+}
+.reset-pin-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.svg-and-text1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#pin-svg {
+  width: 6%;
+}
+#reset-pin-p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.seperator {
+  width: 100%;
+  height: 0.1px;
+  margin-top: 0px;
+  border: none;
+  background-color: grey;
+}
+
+.change-password-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.svg-and-text2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#password-svg {
+  width: 6%;
+}
+#change-password-p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  margin: 0px 2px;
+  padding: 7px 5px;
+  bottom: 0;
+  width: 96%;
+  background-color: #3A3A3A;
+}
+.nav-item {
+  text-decoration: none;
+  flex: 1;
+  text-align: center;
+  font-size: 30px;
+  transition: 0.3s;
+  color: #AAA;
+}
+.nav-item.active {
+  border-radius: 20px;
+  color: #FFF;
+  background-color: #282828;
+}
+.nav-item:hover {
+  border-radius: 20px;
+  color: #FFF;
+  background-color: #303030;
+}
+

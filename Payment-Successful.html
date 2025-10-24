@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Payment-Successful.css">
+
+  <title>Payment Successful - QuickSub</title>
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+<a href="#" id="scroll-up"></a>
+<br><br>
+
+<div class="error-div">
+  <div class="error-svg-div">
+<img src="Images/About.svg" id="error-svg">
+  </div>
+  <div class="error-div-texts">
+<p id="error-p">Successful!</p>
+<p id="error-description">Saved to Beneficiary.</p>
+  </div>
+  </div>
+
+  <div class="main-body">
+  <div class="successful-gif-div">
+<img src="Images/Successful.gif" id="successful-gif">
+  </div>
+
+  <div class="transaction-successful-div">
+<h2 id="transaction-successful-h">Transaction Successful</h2>
+<p id="transaction-successful-p">Your Deposit of <span id="data-bundle">{depositAmount}</span> is being processed. You've earned a commission of <span id="earned-commission">&#8358;10</span> for this transaction!</p>
+  </div>
+<br>
+
+  <div class="view-transaction-and-save-beneficiary">
+  <div class="view-transaction-div">
+<img src="Images/Eye-Open.svg" id="eye-icon" class="div-svg">
+<p id="view-transaction-p">View Transaction</p>
+  </div>
+
+  <div class="save-beneficiary-div">
+<img src="Images/Save-Beneficiary.svg" id="save-beneficiary-svg" class="div-svg">
+<p id="save-beneficiary-p">Save Beneficiary</p>
+  </div>
+  </div>
+<br>
+
+  <div class="bottom-buttons-div">
+<button id="buy-again" class="button">
+<img src="Images/Refresh.svg" class="button-svg">
+Buy Again</button>
+
+<button id="close" class="button">
+<a href="https://bennyboy10.github.io/QuickSub/index.html">
+<!-- <a href="https://quicksub.vercel.app/index.html"> -->
+<img src="Images/Cancel.svg" class="button-svg">
+Close</button>
+</a>
+  </div>
+  </div>
+  </div>
+
+<!--<script src="Script.js"></script>-->
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+});
+
+var scrollUp = document.getElementById("scroll-up");
+var errorDiv = document.querySelector(".error-div");
+var viewTransaction = document.querySelector(".view-transaction-div");
+var saveBeneficiary = document.querySelector(".save-beneficiary-div");
+
+
+function showError() {
+  scrollUp.click();
+  errorDiv.style.display = "block";
+  errorDiv.style.top = "-100px";
+setTimeout(function() {
+  errorDiv.style.top = "10px";
+}, 10);
+setTimeout(function() {
+  errorDiv.style.top = "-100px";
+setTimeout(function() {
+  errorDiv.style.display = "none";
+}, 500); // wait for 0.5s for the slide-up animation to complete
+}, 3000); // wait for 3s before sliding up
+setTimeout(function() {
+  window.location.href = "https://bennyboy10.github.io/QuickSub/index.html";
+}, 3500);
+}
+
+viewTransaction.addEventListener("click", function() {
+  window.location.href = "Transactions.html";
+});
+saveBeneficiary.addEventListener("click", function() {
+  showError();
+});
+
+
+// Retrieve and display the data bundle// Retrieve and display the data bundle
+window.addEventListener("DOMContentLoaded", function() {
+  var dataBundle = document.getElementById("data-bundle");
+  var depositAmount = localStorage.getItem("quicksubDepositAmount");
+
+if (depositAmount) {
+  let formattedAmount = new Intl.NumberFormat("en-NG").format(depositAmount);
+  dataBundle.textContent = `₦${formattedAmount}`;
+}
+});
+
+window.addEventListener("DOMContentLoaded", function() {
+});
+
+// Function to generate a random 25-character Session ID
+function generateSessionID() {
+  let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let sessionID = "";
+for (let i = 0; i < 25; i++) {
+  sessionID += characters.charAt(Math.floor(Math.random() * characters.length));
+}
+  return sessionID;
+}
+
+
+function updateLocalStorage() {
+  var currentTime = new Date().toLocaleString();
+  var depositAmount = parseInt(localStorage.getItem("quicksubDepositAmount"));
+  var phoneNumber = localStorage.getItem("quicksubPhoneNumber");
+  var mainBalance = parseFloat(localStorage.getItem("quicksubMainBalance")) || 0;
+  var commissionBalance = parseInt(localStorage.getItem("quicksubCommissionBalance")) || 0;
+  var lsSessionID = localStorage.getItem("quicksubSessionID");
+
+  let transactionHistory = JSON.parse(localStorage.getItem("quicksubTransactions")) || [];
+
+// Check if the transaction already exists
+let isDuplicate = transactionHistory.some(transaction => 
+transaction.sessionID === lsSessionID && transaction.amount === `₦${depositAmount}`
+);
+
+if (isDuplicate) {
+  console.log("Duplicate transaction detected, skipping save.");
+  return;
+}
+
+let transaction = {
+  type: 'Funding Wallet',
+  amount: `₦${depositAmount}`,
+  number: `${phoneNumber}`,
+  time: `${currentTime}`,
+  sessionID: `${lsSessionID}`
+};
+
+  mainBalance += depositAmount || 0;
+  localStorage.setItem("quicksubMainBalance", mainBalance.toString());
+  commissionBalance += 10;
+  localStorage.setItem("quicksubCommissionBalance", commissionBalance);
+
+transactionHistory.push(transaction);
+localStorage.setItem("quicksubTransactions", JSON.stringify(transactionHistory));
+console.log("Transaction saved successfully.");
+}
+
+// Ensure session ID is generated only once per session
+if (!localStorage.getItem("quicksubSessionID")) {
+  localStorage.setItem("quicksubSessionID", generateSessionID());
+}
+
+updateLocalStorage();
+
+  </script>
+
+</body>
+</html>

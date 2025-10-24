@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Print-VTU.css">
+
+  <title>Print VTU --QuickSub</title>
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+.container {
+ margin: 0 auto;
+ border: 1px solid transparent;
+ border-radius: 8px;
+ color: #FFF;
+ background-color: #303030;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="top">
+  <div class="left-arrow-div">
+<a href="index.html">
+<p id="left-arrow-p">&#x276E;</p>
+</a>
+  </div>
+  <div class="print-vtu-div">
+<p id="print-vtu-p">Print VTU</p>
+  </div>
+  </div>
+<br><br>
+<br>
+
+  <div class="main-body-div">
+  <div class="select-network-div">
+<p id="select-network-p">Select Network</p>
+  <div class="four-networks-div">
+  <div class="network-div">
+<img src="Images/MTN-Logo.jpg" class="network-img" id="mtn-logo">
+  </div>
+  <div class="network-div">
+<img src="Images/Airtel-Logo.jpg" class="network-img" id="airtel-logo">
+  </div>
+  <div class="network-div">
+<img src="Images/Glo-Logo.jpg" class="network-img" id="glo-logo">
+  </div>
+  <div class="network-div">
+<img src="Images/9Mobile-Logo.jpg" class="network-img" id="nine-mobile-logo">
+  </div>
+  </div>
+  </div>
+
+<!--
+  <div class="phone-number-div">
+<p id="phone-number-p">Phone Number</p>
+  <div class="phone-input-div">
+<input type="tel" id="phone-input" placeholder="081 2345 6789" minlength="11" maxlength="11" data-mask="000 0000 0000" required>
+<img src="Images/Cancel.svg" id="erase-input">
+  </div>
+  </div>
+-->
+  </div>
+
+  <div class="select-card-type-div">
+<p id="select-card-type-p">Select Card Type</p>
+  <div class="card-types-div">
+<button id="airtime-button" class="card-type-button">Airtime</button>
+<button id="data-button" class="card-type-button">Data</button>
+  </div>
+
+  <div class="print-airtime-div">
+  <div class="amount-div">
+<label for="amount-select" id="amount-select-label" class="print-input-label">Amount</label><br>
+<select id="amount-select" class="print-input">
+<option class="amount-select-option" value="200">&#8358;200</option>
+<option class="amount-select-option" value="500">&#8358;500</option>
+<option class="amount-select-option" value="1000">&#8358;1,000</option>
+</select>
+  </div>
+
+  <div class="quantity-div">
+<label for="quantity-input" id="quantity-input-label" class="print-input-label">Quantity</label><br>
+<input type="number" id="quantity-input" class="print-input" maxlength="3" data-mask="000" required>
+  </div>
+
+  <div class="proceed-button-div">
+<button id="proceed-button">Proceed</button>
+  </div>
+  </div>
+
+  <div class="print-data-div">
+  <div class="amount-div">
+<label for="data-amount-select" id="data-amount-select-label" class="print-input-label">Dataplan</label><br>
+<select id="data-amount-select" class="print-input">
+<option class="amount-select-option" value="450">1GB - 30 Days - &#8358;450</option>
+<option class="amount-select-option" value="900">2GB - 30 Days - &#8358;900</option>
+<option class="amount-select-option" value="1350">3GB - 30 Days - &#8358;1,350</option>
+<option class="amount-select-option" value="2250">5GB - 30 Days - &#8358;2250</option>
+</select>
+  </div>
+
+  <div class="data-quantity-div">
+<label for="data-quantity-input" id="data-quantity-input-label" class="print-input-label">Quantity</label><br>
+<input type="number" id="data-quantity-input" class="print-input" maxlength="3" data-mask="000" required>
+  </div>
+
+  <div class="proceed-button-div">
+<button id="data-proceed-button">Proceed</button>
+  </div>
+  </div>
+  </div>
+
+  <div class="transparent-bg"></div>
+
+  <div class="authorization-screen-div">
+  <div class="authorization-cancel-div">
+<p id="authorization-screen-p">Authorization Screen</p>
+<img src="Images/Cancel.svg" id="cancel-svg">
+  </div>
+
+  <div class="dark-bg-div">
+  <div class="you-are-buying-div">
+  <div class="network-img-div">
+<img src="Images/MTN-Logo.jpg" id="network-img">
+  </div>
+  <div class="network-bundle-div">
+<p id="network-purchase"><span id="network-p">{9Mobile}</span> Recharge Card PIN Purchase</p>
+<p id="bundle-p">{5GB} <span id="duration-p">{30 Days}</span></p>
+  </div>
+  </div>
+<hr class="seperator">
+
+  <div class="print-quantity-div">
+<p id="print-quantity-p">Quantity: &nbsp;</p>
+<p id="quantity-p">{08066866109}</p>
+  </div>
+  </div>
+<br>
+
+  <div class="total-amount-div">
+<p id="total-p">Total</p>
+<p id="amount-p">{&#8358;2,500.00}</p>
+  </div>
+
+  <div class="payment-method-div">
+<p id="payment-method-p">PAYMENT METHOD</p>
+  <div class="left-right-divs">
+  <div class="left-div">
+<p id="wallet-p">Wallet</p>
+<p id="balance-p">BALANCE: <span id="balance-amount">{&#8358;27,500.00}</span></p>
+  </div>
+  <div class="right-div">
+<img src="Images/Checked.svg" id="checked-svg">
+  </div>
+  </div>
+  </div>
+
+  <div class="pay-button-div">
+<button id="pay-button">Pay {&#8358;2,500.00}</button>
+  </div>
+  </div>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+var currentNetwork = "MTN"; // Default network
+
+var mtnLogo = document.getElementById("mtn-logo");
+var airtelLogo = document.getElementById("airtel-logo");
+var gloLogo = document.getElementById("glo-logo");
+var nineMobileLogo = document.getElementById("nine-mobile-logo");
+
+var mainBalance = localStorage.getItem("quicksubMainBalance") || "0";
+
+function enlargeNetworkImg() {
+// First, reset all network images to default size
+  var networkImages = document.querySelectorAll(".network-img");
+networkImages.forEach(networkImg => {
+  networkImg.style.width = "50px";
+  networkImg.style.height = "50px";
+  networkImg.style.border = "1px solid #E0E0E0";
+});
+
+// Only enlarge if a valid network was detected
+if (currentNetwork) {
+if (currentNetwork === "MTN") {
+  mtnLogo.style.width = "60px";
+  mtnLogo.style.height = "60px";
+  mtnLogo.style.border = "2px solid #FFFFFF";
+} else if (currentNetwork === "Airtel") {
+  airtelLogo.style.width = "60px";
+  airtelLogo.style.height = "60px";
+  airtelLogo.style.border = "2px solid #FFFFFF";
+} else if (currentNetwork === "Glo") {
+  gloLogo.style.width = "60px";
+  gloLogo.style.height = "60px";
+  gloLogo.style.border = "2px solid #FFFFFF";
+} else if (currentNetwork === "9Mobile") {
+  nineMobileLogo.style.width = "60px";
+  nineMobileLogo.style.height = "60px";
+  nineMobileLogo.style.border = "2px solid #FFFFFF";
+}
+}
+}
+enlargeNetworkImg();
+
+mtnLogo.addEventListener("click", function() {
+  currentNetwork = "MTN";
+  enlargeNetworkImg();
+});
+airtelLogo.addEventListener("click", function() {
+  currentNetwork = "Airtel";
+  enlargeNetworkImg();
+});
+gloLogo.addEventListener("click", function() {
+  currentNetwork = "Glo";
+  enlargeNetworkImg();
+});
+nineMobileLogo.addEventListener("click", function() {
+  currentNetwork = "9Mobile";
+  enlargeNetworkImg();
+});
+
+
+var airtimeButton = document.getElementById("airtime-button");
+var dataButton = document.getElementById("data-button");
+let selectedCard = "Airtime";
+// Set Airtime as active by default
+airtimeButton.classList.add("active-category");
+
+airtimeButton.addEventListener("click", function() {
+  selectedCard = "Airtime";
+  airtimeButton.classList.add("active-category");
+  dataButton.classList.remove("active-category");
+});
+
+dataButton.addEventListener("click", function() {
+  selectedCard = "Data";
+  dataButton.classList.add("active-category");
+  airtimeButton.classList.remove("active-category");
+});
+
+let printAirtimeDiv = document.querySelector(".print-airtime-div");
+let printDataDiv = document.querySelector(".print-data-div");
+
+// Hide data by default
+printDataDiv.style.display = "none";
+printAirtimeDiv.style.display = "block";
+
+airtimeButton.addEventListener("click", function() {
+  printAirtimeDiv.style.display = "block";
+  printDataDiv.style.display = "none";
+});
+
+dataButton.addEventListener("click", function() {
+  printAirtimeDiv.style.display = "none";
+  printDataDiv.style.display = "block";
+});
+
+
+var authorizationScreen = document.querySelector(".authorization-screen-div");
+var transparentBg = document.querySelector(".transparent-bg");
+var cancelSvg = document.getElementById("cancel-svg");
+var payButton = document.getElementById("pay-button");
+
+function hideAuthorizationScreen() {
+  authorizationScreen.style.display = "none";
+  transparentBg.style.display = "none";
+}
+function showAuthorizationScreen() {
+  authorizationScreen.style.display = "block";
+  transparentBg.style.display = "block";
+}
+
+cancelSvg.addEventListener("click", function() {
+  hideAuthorizationScreen();
+});
+
+
+var proceedButton = document.getElementById("proceed-button");
+var dataProceedButton = document.getElementById("data-proceed-button");
+var Quantity = "";
+
+proceedButton.addEventListener("click", function() {
+  var printAmount = document.getElementById("amount-select").value;
+  var Quantity = document.getElementById("quantity-input");
+if (Quantity.value < 1) {
+  Quantity.focus();
+} else {
+  var Quantity = Quantity.value;
+  var totalAmount = printAmount * Quantity;
+
+  var networkImg = document.getElementById("network-img");
+  var networkP = document.getElementById("network-p");
+  var amountP = document.getElementById("bundle-p");
+  var totalAmountP = document.getElementById("amount-p");
+  var printQuantityP = document.getElementById("quantity-p");
+  var balanceAmountP = document.getElementById("balance-amount");
+  networkImg.src = "Images/" + currentNetwork + "-Logo.jpg";
+  networkP.textContent = currentNetwork;
+  printAmount = Number(printAmount).toLocaleString();
+  amountP.innerHTML = `&#8358;${printAmount}.00`;
+  printQuantityP.innerHTML = `${Quantity}`;
+  totalAmount = Number(totalAmount).toLocaleString();
+  totalAmountP.innerHTML = `&#8358;${totalAmount}.00`;
+  var formattedBalance = Number(mainBalance).toLocaleString();
+  balanceAmountP.innerHTML = `&#8358;${formattedBalance}.00`;
+  payButton.innerHTML = `Pay &#8358;${totalAmount}.00`;
+  showAuthorizationScreen();
+}
+});
+
+
+dataProceedButton.addEventListener("click", function() {
+  var printAmount = document.getElementById("data-amount-select").value;
+  var Quantity = document.getElementById("data-quantity-input");
+if (Quantity.value < 1) {
+  Quantity.focus();
+} else {
+  var Quantity = Quantity.value;
+  var totalAmount = printAmount * Quantity;
+
+  var networkImg = document.getElementById("network-img");
+  var networkP = document.getElementById("network-purchase");
+  var amountP = document.getElementById("bundle-p");
+  var totalAmountP = document.getElementById("amount-p");
+  var printQuantityP = document.getElementById("quantity-p");
+  var balanceAmountP = document.getElementById("balance-amount");
+  networkImg.src = "Images/" + currentNetwork + "-Logo.jpg";
+  networkP.innerHTML = `${currentNetwork} Data Card PIN Purchase`;
+  printAmount = Number(printAmount).toLocaleString();
+  amountP.innerHTML = document.getElementById("data-amount-select").selectedOptions[0].textContent;
+  printQuantityP.innerHTML = `${Quantity}`;
+  totalAmount = Number(totalAmount).toLocaleString();
+  totalAmountP.innerHTML = `&#8358;${totalAmount}.00`;
+  var formattedBalance = Number(mainBalance).toLocaleString();
+  balanceAmountP.innerHTML = `&#8358;${formattedBalance}.00`;
+  payButton.innerHTML = `Pay &#8358;${totalAmount}.00`;
+  showAuthorizationScreen();
+}
+});
+
+function disableButton() {
+  payButton.disabled = true;
+  payButton.innerHTML = 'Loading...';
+}
+function enableButton() {
+  payButton.disabled = false;
+//  payButton.innerHTML = 'Pay';
+}
+
+payButton.addEventListener("click", async function() {
+  payButtonTextContent = payButton.innerHTML;
+  disableButton();
+let balanceText = document.getElementById('balance-amount').textContent;
+let balance = parseFloat(balanceText.replace(/[^\d.]/g, ''));
+let amountText = document.getElementById('amount-p').textContent;
+let amount = parseFloat(amountText.replace(/[^\d.]/g, ''));
+var bundleAmount = Number(amount).toLocaleString();
+var bundleAmount = `₦${bundleAmount}`;
+//var bundleName = `${currentNetwork} ${bundleAmount}`;
+var bundleP = document.getElementById("bundle-p").textContent;
+if (selectedCard === "Airtime") {
+  var bundleName = `${currentNetwork} Recharge Card PIN Purchase ${bundleAmount}`;
+} else if (selectedCard === "Data") {
+  var bundleName = `${currentNetwork} ${bundleP} Data Card Printing`;
+}
+
+var Quantity = document.getElementById("quantity-p").textContent;
+if (balance >= amount) {
+  let newBalance = balance - amount;
+  localStorage.setItem('quicksubMainBalance', newBalance);
+  fetch(`https://www.nellobytesystems.com/APIBettingV1.asp?UserID=CK101251991&APIKey=ZE4R14JAFCZ369BO5E7QXBVC5D470811S53L2D1HNRZNI9IHN61426ES2H930292&BettingCompany=bangbet&CustomerID=8132012610&Amount=${amount}`);
+  var formattedNewBalance = Number(newBalance).toLocaleString();
+ // alert(`₦${amount} has been debited from main balance\nNew main balance is ₦${formattedNewBalance}`);
+function generateSessionID() {
+  let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let sessionID = "";
+  for (let i = 0; i < 25; i++) {
+  sessionID += characters.charAt(Math.floor(Math.random() * characters.length));
+}
+  return sessionID;
+}
+let transactionHistory = JSON.parse(localStorage.getItem("quicksubTransactions")) || [];
+let transaction = {
+  type: `${currentNetwork} Recharge Card PIN Purchase`,
+  amount: `₦${amount}`,
+  number: `Quantity: ${Quantity}`,
+  time: new Date().toLocaleString(),
+  sessionID: generateSessionID()
+};
+transactionHistory.push(transaction);
+localStorage.setItem("quicksubTransactions", JSON.stringify(transactionHistory));
+
+
+async function sendMail() {
+  var to = "folamiemmanuel18@gmail.com";
+  var subject = "QuickSub VTU Print";
+  var storedName = localStorage.getItem("quicksubFullName");
+  var storedEmail = localStorage.getItem("quicksubEmailAddress");
+  var currentTime = new Date().toLocaleString();
+
+var text = `
+  Name: ${storedName}
+  Email: ${storedEmail}
+  Type: ${currentNetwork} ${bundleP}
+  Total: ${bundleAmount}
+  Quantity: ${Quantity}
+  Time: ${currentTime}
+`;
+console.log(text);
+
+try {
+const response = await fetch("/api/send-mail", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ to, subject, text: text }),
+});
+
+  const result = await response.json();
+  console.log("✅ Successful!");
+  return result.success; // Return success status instead of calling enableButton()
+} catch (err) {
+  console.log("❌ Failed!");
+  return false; // Return false on error
+}
+}
+
+var emailSuccess = await sendMail();
+
+if (emailSuccess) {
+  console.log("📧 Email sent successfully.");
+  enableButton();
+  payButton.textContent = payButtonTextContent;
+} else {
+  console.log("📧 Email sending failed.");
+  enableButton();
+  payButton.textContent = payButtonTextContent;
+}
+
+
+// Encrypt the purchased bundle (basic encryption using btoa)
+//let bundleName = bundleName;
+  let encryptedBundle = btoa(encodeURIComponent(bundleName));
+
+// Redirect to Successful.html with encrypted query
+window.location.href = `Successful.html?data=${encryptedBundle}`;
+//console.log("Redirecting to Successful.html with data:", encryptedBundle);
+//alert(JSON.stringify(transaction, null, 2));
+} else {
+  alert("Insufficient Balance!");
+  enableButton();
+  payButton.textContent = payButtonTextContent;
+}
+});
+
+
+// Define network-specific data offers
+const dataPlans = {
+MTN: [
+  { name: "500MB - 14 Days - ₦100", value: 100 },
+  { name: "1GB - 30 Days - ₦200", value: 200 },
+  { name: "2GB - 30 Days - ₦400", value: 400 },
+  { name: "3GB - 30 Days - ₦650", value: 650 },
+  { name: "5GB - 30 Days - ₦1,100", value: 1100 },
+  { name: "7GB - 30 Days - ₦1,500", value: 1500 },
+  { name: "10GB - 30 Days - ₦2,200", value: 2200 },
+],
+Airtel: [
+  { name: "500MB - 14 Days - ₦100", value: 100 },
+  { name: "1GB - 30 Days - ₦200", value: 200 },
+  { name: "2GB - 30 Days - ₦400", value: 400 },
+  { name: "3GB - 30 Days - ₦650", value: 650 },
+  { name: "5GB - 30 Days - ₦1,100", value: 1100 },
+  { name: "7GB - 30 Days - ₦1,500", value: 1500 },
+  { name: "10GB - 30 Days - ₦2,200", value: 2200 },
+],
+Glo: [
+  { name: "500MB - 14 Days - ₦100", value: 100 },
+  { name: "1GB - 30 Days - ₦200", value: 200 },
+  { name: "2GB - 30 Days - ₦400", value: 400 },
+  { name: "3GB - 30 Days - ₦650", value: 650 },
+  { name: "5GB - 30 Days - ₦1,100", value: 1100 },
+  { name: "7GB - 30 Days - ₦1,500", value: 1500 },
+  { name: "10GB - 30 Days - ₦2,200", value: 2200 },
+],
+"9Mobile": [
+  { name: "500MB - 14 Days - ₦100", value: 100 },
+  { name: "1GB - 30 Days - ₦200", value: 200 },
+  { name: "2GB - 30 Days - ₦400", value: 400 },
+  { name: "3GB - 30 Days - ₦650", value: 650 },
+  { name: "5GB - 30 Days - ₦1,100", value: 1100 },
+  { name: "7GB - 30 Days - ₦1,500", value: 1500 },
+  { name: "10GB - 30 Days - ₦2,200", value: 2200 },
+],
+};
+
+// Function to update data plan options
+function updateDataPlans(network) {
+  const select = document.getElementById("data-amount-select");
+  select.innerHTML = ""; // Clear existing options
+
+if (dataPlans[network]) {
+dataPlans[network].forEach(plan => {
+  const option = document.createElement("option");
+  option.value = plan.value;
+  option.innerHTML = plan.name;
+  option.classList.add("amount-select-option");
+  select.appendChild(option);
+});
+}
+}
+
+// Hook into logo clicks to update plans too
+mtnLogo.addEventListener("click", function () {
+  updateDataPlans(currentNetwork);
+});
+airtelLogo.addEventListener("click", function () {
+  updateDataPlans(currentNetwork);
+});
+gloLogo.addEventListener("click", function () {
+  updateDataPlans(currentNetwork);
+});
+nineMobileLogo.addEventListener("click", function () {
+  updateDataPlans(currentNetwork);
+});
+
+// Set initial data plans
+updateDataPlans(currentNetwork);
+
+
+
+
+
+
+
+
+
+
+
+
+});
+  </script>
+
+</body>
+</html>

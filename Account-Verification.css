@@ -1,0 +1,135 @@
+.container {
+ margin: 0 auto;
+ border: 1px solid transparent;
+ border-radius: 8px;
+ color: #FFF;
+ background-color: #303030;
+}
+.top {
+  position: fixed;
+  display: flex;
+  padding: 0 10px 0 10px;
+  top: 0;
+  width: 94%;
+  border: none;
+  background-color: #303030;
+  z-index: 101;
+}
+.account-verification-div {
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 15px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #FFF;
+}
+#nin-form {
+  display: flex;
+  flex-direction: column;
+}
+button, input {
+  margin: 5px 0;
+  padding: 0 10px;
+  width: 92%;
+  height: 42px;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid #A4A4A4;
+  color: #FFF;
+  background-color: #373737;
+  outline: none;
+}
+input:focus {
+  border: 2px solid #c2c2c2;
+}
+input::placeholder {
+  font-size: 17px;
+  font-weight: 500;
+}
+label {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+select {
+  margin: 5px 0;
+  padding: 0 10px;
+  width: 99%;
+  height: 45px;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid #A4A4A4;
+  color: #FFF;
+  background-color: #373737;
+  outline: none;
+}
+#nin-code-span {
+  font-size: 10px;
+  color: #CCCCCC;
+}
+
+.recipient-name-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 0;
+  padding: 0 10px;
+  gap: 10px;
+  width: 92%;
+  height: 45px;
+  border-radius: 10px;
+  border: 1px solid #A4A4A4;
+  color: #FFF;
+  background-color: #373737;
+}
+.green-tick-svg {
+  width: 20px;
+  height: 20px;
+}
+.name-div {
+  display: none;
+  margin-top: 10px;
+}
+#recipient-name-input {
+  border: none;
+}
+
+#ensure-p {
+  font-size: 12px;
+  color: #FFD700;
+}
+
+.proceed-button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+}
+#proceed-button {
+  width: 60%;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  color: #FFF;
+  background-color: #00A86B;
+}
+#proceed-button:disabled {
+  opacity: 0.7;
+  color: #1B1B1B;
+  background-color: #1c8b6d;
+  background-color: #00A86B;
+}
+
+
+
+

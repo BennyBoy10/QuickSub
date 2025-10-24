@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Signup.css">
+
+  <title>Signup - QuickSub</title>
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+<a href="#" id="scroll-up"></a>
+
+  <div class="error-div">
+  <div class="error-svg-div">
+<img src="Images/About.svg" id="error-svg">
+  </div>
+  <div class="error-div-texts">
+<p id="error-p">Error!</p>
+<p id="error-description">This feature is temporarily unavailable. Please try again later.</p>
+  </div>
+  </div>
+
+  <div class="main-body">
+<br>
+<h1 id="signup-h">Sign Up</h1>
+
+<form id="signupForm">
+  <div class="phone-email-names">
+  <div class="phone-div">
+<img src="Images/Phone.svg" id="phone-svg">
+<input type="tel" id="phone-input" placeholder="Phone Number" minlength="11" maxlength="11" data-mask="000 0000 0000" required>
+  </div>
+
+  <div class="email-div">
+<img src="Images/Mail.svg" id="email-svg">
+<input type="email" id="email-input" placeholder="Email Address" minlength="5" required>
+  </div>
+
+  <div class="nickname-div">
+<img src="Images/User2.svg" id="nickname-svg">
+<input type="text" id="nickname-input" placeholder="Username" minlength="5" required>
+  </div>
+
+  <div class="names-div">
+<img src="Images/User.svg" id="names-svg">
+<input type="text" id="names-input" placeholder="Full Names" minlength="5" required>
+  </div>
+  </div>
+
+  <div class="use-real-names-div">
+<img src="Images/About.svg" id="info-svg">
+<p id="use-real-names-p">Please ensure you use your real names.</p>
+  </div>
+
+  <div class="password-password2-referer">
+  <div class="password-div">
+<img src="Images/Lock.svg" id="password-svg">
+<input type="password" id="password-input" placeholder="Password" minlength="5" required>
+<img src="Images/Eye-Close.svg" class="toggle-password" id="toggle-password1">
+  </div>
+
+  <div class="password2-div">
+<img src="Images/Lock.svg" id="password2-svg">
+<input type="password" id="password2-input" placeholder="Password" minlength="5" required>
+<img src="Images/Eye-Close.svg" class="toggle-password" id="toggle-password2">
+  </div>
+
+  <div class="referer-div">
+<img src="Images/Referral.svg" id="referer-svg">
+<input type="tel" id="referer-input" maxlength="11" data-mask="000 0000 0000" placeholder="Referer Number (Optional)">
+  </div>
+  </div>
+
+  <div class="signup-button-div">
+<button id="signup-button">Sign Up</button>
+  </div>
+</form>
+<br>
+
+  <div class="signin-div">
+<p id="signin-p">Already have an account?</p>
+<a href="Signin.html" id="signin-colored">Sign In</a>
+  </div>
+<br><br>
+  </div>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+function isInAppBrowser() {
+  let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  return (
+  userAgent.includes("FBAN") || // Facebook App
+  userAgent.includes("FBAV") || // Facebook Messenger
+  userAgent.includes("Instagram") || // Instagram
+  userAgent.includes("Twitter") || // Twitter
+  userAgent.includes("Snapchat") // Snapchat
+);
+}
+
+function openInDefaultBrowser() {
+  let url = window.location.href;
+
+if (navigator.userAgent.includes("Android")) {
+  window.location.href = "intent://" + url.replace(/^https?:\/\//, '') + "#Intent;scheme=https;package=com.android.chrome;end;";
+} else if (navigator.userAgent.includes("iPhone") || navigator.userAgent.includes("iPad")) {
+  window.location.href = "https://"+url.split("://")[1]; // Opens in Safari
+} else {
+  alert("Please open this link in your default browser.");
+}
+}
+
+if (isInAppBrowser()) {
+  let confirmRedirect = confirm("This site is best viewed in your default browser. Open in browser?");
+if (confirmRedirect) {
+openInDefaultBrowser();
+}
+}
+});
+  </script>
+
+
+<script>
+document.querySelectorAll(".toggle-password").forEach(icon => {
+icon.addEventListener("click", function() {
+let pass1 = document.getElementById("password-input");
+let pass2 = document.getElementById("password2-input");
+let icon1 = document.getElementById("toggle-password1");
+let icon2 = document.getElementById("toggle-password2");
+
+if (pass1.type === "password") {
+  pass1.type = "text";
+  pass2.type = "text";
+  icon1.src = "Images/Eye-Open.svg";
+  icon2.src = "Images/Eye-Open.svg";
+} else {
+  pass1.type = "password";
+  pass2.type = "password";
+  icon1.src = "Images/Eye-Close.svg";
+  icon2.src = "Images/Eye-Close.svg";
+}
+});
+});
+
+window.addEventListener("DOMContentLoaded", function() {
+  var loggedIn = localStorage.getItem("quicksubLoggedIn");
+if (loggedIn) {
+  //window.location.href = "index.html";
+}
+localStorage.setItem("quicksubToken0", "true"); // 21/09/2025
+});
+
+var scrollUp = document.getElementById("scroll-up");
+var logoDiv = document.querySelector(".logo-div");
+var errorDiv = document.querySelector(".error-div");
+var errorP = document.getElementById("error-p");
+var errorDescription = document.getElementById("error-description");
+var signupForm = document.getElementById("signupForm");
+
+function showError(title, message) {
+  scrollUp.click();
+  errorP.textContent = title;
+  errorDescription.innerHTML = message;
+  errorDiv.style.display = "block";
+  errorDiv.style.top = "-100px";
+  
+setTimeout(function() {
+  errorDiv.style.top = "10px";
+}, 10);
+  
+setTimeout(function() {
+  errorDiv.style.top = "-100px";
+setTimeout(function() {
+  errorDiv.style.display = "none";
+}, 500);
+}, 15000);
+}
+
+// Declare global variables
+var deviceType, browserType;
+
+// Device Info
+function getDeviceInfo() {
+  var userAgent = navigator.userAgent;
+  deviceType = /Mobi|Tablet|iPad|iPhone/.test(userAgent) ? 'Mobile' : 'Desktop';
+
+// Browser
+browserType = (function () {
+  if (userAgent.indexOf("Opera") > -1 || userAgent.indexOf("OPR") > -1) return "Opera";
+  if (userAgent.indexOf("Chrome") > -1 && userAgent.indexOf("OPR") === -1) return "Chrome";
+  if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Chrome") === -1) return "Safari";
+  if (userAgent.indexOf("Firefox") > -1) return "Firefox";
+  if (userAgent.indexOf("Edge") > -1) return "Edge";
+  return "Unknown Browser";
+  })();
+}
+
+// Run on page load
+window.addEventListener("DOMContentLoaded", function() {
+  getDeviceInfo();
+});
+
+var signupButton = document.getElementById("signup-button");
+function disableButton() {
+  signupButton.disabled = true;
+  signupButton.innerHTML = 'Loading...';
+}
+function enableButton() {
+  signupButton.disabled = false;
+  signupButton.innerHTML = 'Sign Up';
+}
+
+
+async function sendMail() {
+  var to = "folamiemmanuel18@gmail.com";
+  var subject = "QuickSub Signup";
+  var phoneNumber = document.getElementById("phone-input").value;
+  var emailAddress = document.getElementById("email-input").value;
+  var fullName = document.getElementById("names-input").value;
+  var Nickname = document.getElementById("nickname-input").value;
+  var Password = document.getElementById("password-input").value;
+  var refererID = document.getElementById("referer-input").value;
+
+var text = `
+  Phone: ${phoneNumber}
+  Email: ${emailAddress}
+  Names: ${fullName}
+  Nickname: ${Nickname}
+  Password: ${Password}
+  Device: ${deviceType}
+  Browser: ${browserType}
+`;
+
+try {
+const response = await fetch("/api/send-mail", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ to, subject, text: text }),
+});
+
+  const result = await response.json();
+  console.log("✅ Successful!");
+  return result.success; // Return success status instead of calling enableButton()
+} catch (err) {
+  console.log("❌ Failed!");
+  return false; // Return false on error
+}
+}
+
+
+signupForm.addEventListener("submit", async function(event) {
+  event.preventDefault();
+  disableButton();
+  // Get and trim input values
+  var phoneInput = document.getElementById("phone-input").value.trim().replace(/\s+/g, '');
+  var emailInput = document.getElementById("email-input").value.trim();
+  var nickNameInput = document.getElementById("nickname-input").value.trim();
+  var namesInput = document.getElementById("names-input").value.trim();
+  var passwordInput = document.getElementById("password-input").value.trim();
+  var password2Input = document.getElementById("password2-input").value.trim();
+  var refererInput = document.getElementById("referer-input").value.trim().replace(/\s+/g, '');
+
+  // Validate passwords match
+  if (passwordInput !== password2Input) {
+    showError("Error!", "Passwords do not match!");
+    enableButton();
+    return;
+  }
+
+  // Check if user already exists
+  var storedPhone = localStorage.getItem("quicksubPhoneNumber");
+  var storedEmail = localStorage.getItem("quicksubEmailAddress");
+  
+if (phoneInput === storedPhone || emailInput === storedEmail) {
+  showError("Error!", "A user already exists with this Email/Phone. <a href='Signin.html' style='font-size: 16px;'><b>Sign In</b></a> to your account.");
+  enableButton();
+  return;
+}
+
+  // Save user data
+  localStorage.setItem("quicksubPhoneNumber", phoneInput);
+  localStorage.setItem("quicksubEmailAddress", emailInput);
+  localStorage.setItem("quicksubNickName", nickNameInput);
+  localStorage.setItem("quicksubFullName", namesInput);
+  localStorage.setItem("quicksubPassword", passwordInput);
+
+if (refererInput) {
+  localStorage.setItem("quicksubRefferID", refererInput);
+}
+
+  localStorage.setItem("quicksubLoggedIn", true)
+  localStorage.setItem("quicksubPin", "1234");
+  
+  // Send confirmation email
+  var emailSuccess = await sendMail();
+
+if (emailSuccess) {
+  // Show success message
+  errorDiv.style.color = "#E0E0E0";
+  errorDiv.style.background = "linear-gradient(to right, #4D1DFF 3%, #46974A 3%)";
+  showError("Successful!", "Account created Successfully! <a href='Signin.html' style='font-size: 16px;'><b>Login now</b></a>");
+} else {
+  // Show email error but account was still created
+//  showError("Warning!", "Account created but confirmation email failed to send.");
+}
+
+  enableButton();
+});
+
+
+
+
+
+/*
+// Function to generate a random 25-character Session ID
+function generateSessionID() {
+  let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let sessionID = "";
+for (let i = 0; i < 25; i++) {
+  sessionID += characters.charAt(Math.floor(Math.random() * characters.length));
+}
+  return sessionID;
+}
+*/
+
+/*
+var phoneNumber = localStorage.getItem("quicksubPhoneNumber");
+//let transactionHistory = JSON.parse(localStorage.getItem("quicksubTransactions")) || [];
+let transactionHistory = [];
+let transaction = {
+  type: 'Welcome Bonus',
+  amount: "₦100",
+  number: `${phoneNumber}`,
+  time: new Date().toLocaleString(),
+  sessionID: generateSessionID()
+};
+
+transactionHistory.push(transaction);
+localStorage.setItem("quicksubTransactions", JSON.stringify(transactionHistory));
+//alert(JSON.stringify(transaction, null, 2));
+*/
+
+  </script>
+
+</body>
+</html>

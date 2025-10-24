@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="All-Services.css">
+
+  <title>All Services - QuickSub</title>
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="top">
+<h2 id="all-services-p">All Services</h2>
+  </div>
+<br><br>
+
+  <div class="balances-div">
+  <div class="available-balance-div">
+<p id="available-balance-p">AVAILABLE BALANCE</p>
+<h2 id="balance-h">{&#8358;}</h2>
+  </div>
+  </div>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+
+  <div class="quick-links-div">
+  <div class="quick-icons-div">
+  <div class="data-bundle-div">
+<a href="Data-Bundles.html">
+<img src="Images/Data-Bundle.svg" id="data-bundle-img">
+<span id="data-bundle-p">Data Bundle</span>
+</a>
+  </div>
+
+  <div class="airtime-div">
+<a href="Buy-Airtime.html">
+<img src="Images/Airtime.svg" id="airtime-img">
+<span id="airtime-p">Airtime</span>
+</a>
+  </div>
+
+  <div class="print-vtu-div">
+<a href="Print-VTU.html">
+<img src="Images/Printer.svg" id="print-vtu-img">
+<span id="print-vtu-p">Print VTU</span>
+</a>
+  </div>
+  </div>
+  </div>
+
+
+  <div class="more-links-div">
+  <div class="more-icons-div">
+  <div class="contact-us-div">
+<a href="Contact-Us.html">
+<img src="Images/Contact-Us.svg" id="contact-us-img">
+<span id="contact-us-p">Contact Us</span>
+</a>
+  </div>
+
+  <div class="cable-tv-div">
+<img src="Images/Cable-TV.svg" id="cable-tv-img">
+<span id="cable-tv-p">Cable TV</span>
+  </div>
+
+  <div class="meter-token-div">
+<img src="Images/Meter-Token.svg" id="meter-token-img">
+<span id="meter-token-p">Meter Token</span>
+  </div>
+  </div>
+  </div>
+<br>
+
+  <nav class="navbar">
+<a href="index.html" class="nav-item">
+<i class="fas fa-home"></i>
+</a>
+<a href="Transactions.html" class="nav-item">
+<i class="fas fa-exchange-alt"></i>
+</a>
+<a href="All-Services.html" class="nav-item active">
+<i class="fas fa-grip"></i>
+</a>
+<a href="Contact-Us.html" class="nav-item">
+<i class="fas fa-comments"></i>
+</a>
+<a href="Account-Settings.html" class="nav-item">
+<i class="fas fa-user-gear"></i>
+</a>
+  </nav>
+  </div>
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+var mainBalance = parseInt(localStorage.getItem("quicksubMainBalance"))  || 0;
+var balanceH = document.getElementById("balance-h");
+function setTotalBalance() {
+  balanceH.innerHTML = `&#8358;${mainBalance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+}
+setTotalBalance();
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  let navItems = document.querySelectorAll(".nav-item");
+
+  navItems.forEach(item => {
+if (item.href === window.location.href) {
+  document.querySelector(".active")?.classList.remove("active");
+  item.classList.add("active");
+}
+});
+});
+
+  </script>
+
+</body>
+</html>

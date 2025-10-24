@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Style.css">
+
+  <title>QuickSub - Affordable and long lasting data</title>
+
+
+  <script>
+
+/*
+var loggedIn = localStorage.getItem("quicksubLoggedIn");
+if (!loggedIn) {
+  localStorage.setItem("quicksubLoggedIn", true);
+  localStorage.setItem("quicksubTokenPaystack", "true"); // 21/10/2025
+  var Email = "paystacktest@gmail.com";
+  var Password = "PaystackTest";
+}
+
+if (Email === "paystacktest@gmail.com" && Password === "PaystackTest"){
+  localStorage.setItem("quicksubLoggedIn", true);
+  localStorage.setItem("quicksubEmailAddress", Email);
+  localStorage.setItem("quicksubPassword", Password);
+  localStorage.setItem("quicksubPhoneNumber", "08123456789");
+  localStorage.setItem("quicksubNickName", "Paystack");
+  localStorage.setItem("quicksubFullName", "Paystack Test");
+  localStorage.setItem("quicksubPin", quicksubPin);
+}
+  */
+
+
+/*
+  // Save user data
+  localStorage.setItem("quicksubPhoneNumber", "08037923845");
+  localStorage.setItem("quicksubEmailAddress", "evieluxe002@gmail.com");
+  localStorage.setItem("quicksubNickName", "Prime");
+  localStorage.setItem("quicksubFullName", "Benny Prime");
+  localStorage.setItem("quicksubPassword", "benny");
+
+  localStorage.setItem("quicksubLoggedIn", true)
+  localStorage.setItem("quicksubPin", "1234");
+*/
+  </script>
+
+
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+<a href="#" id="scroll-up"></a>
+  <div class="top">
+  <div class="greetings-name">
+<p id="greetings">Hi, <span id="top-name">{Benny}</span></p>
+  </div>
+
+  <div class="bell-div">
+<span id="span-button"><button id="notification-button">0</button></span>
+<a href="Contact-Us.html">
+<img src="Images/Bell.svg" id="notification-bell">
+</a>
+  </div>
+  </div>
+<br><br>
+<br>
+
+
+  <div class="balances-div">
+  <div class="wallet-balance-div">
+  <div class="left-div">
+  <div class="wallet-balance-p-div">
+<p id="wallet-balance-p">Wallet Balance</p>
+  </div>
+  <div class="balance-and-icon-div">
+<p id="balance-p">&#8358;***</p>
+<img src="Images/Eye-Close.svg" id="eye-icon" class="eye-icon">
+  </div>
+  </div>
+  <div class="right-div">
+  <div class="fund-wallet-button-div">
+<a href="Deposit-Money.html">
+<button id="fund-wallet-button">+ Fund Wallet</button>
+</a>
+  </div>
+  </div>
+  </div>
+  </div>
+<br><br>
+<br><br>
+<br>
+
+
+  <div class="our-services-div">
+  <div class="our-services-and-more">
+<p id="our-services-p">Our Services</p>
+<a href="All-Services.html">
+<p id="more-p">More <span class="right-arrow">&#8250;</span></p>
+</a>
+  </div>
+
+  <div class="quick-icons-div">
+  <div class="data-bundle-div">
+<a href="Data-Bundles.html">
+<img src="Images/Data-Bundle.svg" id="data-bundle-img">
+<span id="data-bundle-p">Data Bundle</span>
+</a>
+  </div>
+
+  <div class="airtime-div">
+<a href="Buy-Airtime.html">
+<img src="Images/Airtime.svg" id="airtime-img">
+<span id="airtime-p">Airtime</span>
+</a>
+  </div>
+
+  <div class="print-vtu-div">
+<a href="Print-VTU.html">
+<img src="Images/Printer.svg" id="print-vtu-img">
+<span id="print-vtu-p">Print VTU</span>
+</a>
+  </div>
+
+  <div class="contact-us-div">
+<a href="Contact-Us.html">
+<img src="Images/Contact-Us.svg" id="contact-us-img">
+<span id="contact-us-p">Contact Us</span>
+</a>
+  </div>
+  </div>
+  </div>
+<br>
+
+
+  <div class="recent-transactions-div">
+  <div class="recent-transactions-and-see-all">
+<p id="recent-transactions-p">Recent Transactions</p>
+<p id="view-all-p"><a href="Transactions.html">View All</a></p>
+  </div>
+<br>
+
+  <div class="receipts-home" id="transaction-list">
+<!-- Transactions will be added here dynamically -->
+  </div>
+<br>
+  </div>
+<br><br>
+<br>
+
+  <nav class="navbar">
+<a href="index.html" class="nav-item active">
+<i class="fas fa-home"></i>
+</a>
+<a href="Transactions.html" class="nav-item">
+<i class="fas fa-exchange-alt"></i>
+</a>
+<a href="All-Services.html" class="nav-item">
+<i class="fas fa-grip"></i>
+</a>
+<a href="Contact-Us.html" class="nav-item">
+<i class="fas fa-comments"></i>
+</a>
+<a href="Account-Settings.html" class="nav-item">
+<i class="fas fa-user-gear"></i>
+</a>
+  </nav>
+  </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+localStorage.setItem("quicksubToken0", "true"); // 21/09/2025
+var loggedIn = localStorage.getItem("quicksubLoggedIn");
+if (!loggedIn) {
+//  window.location.href = "Signup.html";
+}
+
+var emailAddress = localStorage.getItem("quicksubEmailAddress");
+
+//localStorage.setItem("quicksubEmailAddress", "bulamabenjamin100@gmail.com");
+
+/*
+var emailAddress = localStorage.getItem("quicksubEmailAddress") || "";
+if (emailAddress === "bulamabenjamin100@gmail.com") {
+  localStorage.setItem("quicksubMainBalance", 200000);
+}
+*/
+
+function updateNickName() {
+  var topName = document.getElementById("top-name");
+  var nickName = localStorage.getItem("quicksubNickName");
+if (!nickName) {
+  var fullName = localStorage.getItem("quicksubFullName");
+  nickName = fullName ? fullName.split(" ")[0] : "User";
+}
+  topName.textContent = `${nickName}`;
+}
+updateNickName();
+
+
+greetings.addEventListener("dblclick", function() {
+  window.location.href = "Manual-Deposit.html";
+});
+
+if (emailAddress === "EMAIL1@gmail.com" || emailAddress === "exclusiveben10@gmail.com") {
+  document.getElementById("notification-button").textContent = 1;
+}
+
+
+function updateNotificationCount() {
+var notificationBell = document.getElementById("notification-bell");
+let notificationCount = parseInt(document.getElementById("notification-button").textContent);
+if (notificationCount > 0) {
+  notificationCount = 0;
+  localStorage.setItem("quicksubNotificationCount", notificationCount);
+}
+}
+updateNotificationCount();
+
+
+/*
+function setMainBalance() {
+var mainBalanceP = document.getElementById("balance-p");
+var mainBalance = parseInt(localStorage.getItem("quicksubMainBalance")) || 0;
+//console.log(mainBalance);
+//mainBalanceP.innerHTML = `&#8358;${mainBalance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+}
+setMainBalance();
+*/
+
+
+/*
+function setMainBalance() {
+  var url = "https://www.nellobytesystems.com/APIWalletBalanceV1.asp?UserID=CK101251991&APIKey=ZE4R14JAFCZ369BO5E7QXBVC5D470811S53L2D1HNRZNI9IHN61426ES2H930292";
+fetch(url)
+.then(res => res.json())
+.then(data => {
+  //let balance = data.balance || "0.00";
+  let balance = Math.floor(parseFloat(data.balance)) || 0;
+  setupEyeIcon(balance); // 👁️ Still works when fetched
+  localStorage.setItem("quicksubMainBalance", balance);
+  //console.log(balance);
+})
+.catch(err => {
+  console.error("Fetch error:", err);
+  setupEyeIcon("0.00"); // 👁️ Set balance to ₦0.00 if fetch fails
+});
+}
+*/
+
+/*
+//function setupEyeIcon(mainBalance) {
+  var eyeIcon = document.getElementById("eye-icon");
+  var balanceH = document.getElementById("balance-p");
+  var isClicked = false;
+
+eyeIcon.addEventListener("click", function () {
+if (!isClicked) {
+  balanceH.innerHTML = `&#8358;${mainBalance}`;
+  eyeIcon.src = "Images/Eye-Open.svg";
+} else {
+  balanceH.innerHTML = "&#8358;***";
+  eyeIcon.src = "Images/Eye-Close.svg";
+}
+  isClicked = !isClicked;
+});
+}
+//setMainBalance();
+*/
+
+
+//localStorage.setItem("quicksubMainBalance", 28500);
+var mainBalance = parseInt(localStorage.getItem("quicksubMainBalance")) || 0;
+mainBalance = mainBalance.toLocaleString();
+
+
+var eyeIcon = document.getElementById("eye-icon");
+var balanceH = document.getElementById("balance-p");
+var isClicked = false;
+
+eyeIcon.addEventListener("click", function () {
+if (!isClicked) {
+  balanceH.innerHTML = `&#8358;${mainBalance}.00`;
+  eyeIcon.src = "Images/Eye-Open.svg";
+} else {
+  balanceH.innerHTML = "&#8358;***";
+  eyeIcon.src = "Images/Eye-Close.svg";
+}
+  isClicked = !isClicked;
+});
+
+
+
+// Function to load transactions from localStorage and display them
+function loadTransactions() {
+  let transactionList = document.getElementById("transaction-list");
+  let transactions = JSON.parse(localStorage.getItem("quicksubTransactions")) || [];
+
+// Clear the list before reloading
+  transactionList.innerHTML = "";
+
+if (transactions.length === 0) {
+  transactionList.innerHTML = '<p id="no-transactions">No transactions yet.</p>';
+}
+
+// Loop through transactions and create HTML for each
+transactions.reverse().forEach(transaction => {
+  let transactionDiv = document.createElement("div");
+  transactionDiv.classList.add("transaction-item");
+
+// Extract network name (MTN, Airtel, Glo, 9Mobile) for the logo
+let network = transaction.type.split(" ")[0];
+let networkLogo = `Images/${network}-Logo.jpg`;
+
+// Format transaction HTML with session ID
+transactionDiv.innerHTML = `
+  <div class="transaction-img-div">
+<img src="${networkLogo}" class="transaction-img">
+  </div>
+  <div class="margined-text-div">
+  <div class="transaction-name-and-amount">
+<p class="transaction-name">${transaction.type}</p>
+<!-- <p class="transaction-amount">${transaction.amount}</p> -->
+<p class="transaction-amount" style="${['Funding Wallet', 'Welcome Bonus'].includes(transaction.type) ? 'color: #00B875;' : ''}">
+  ${['Funding Wallet', 'Welcome Bonus'].includes(transaction.type) ? '+' : '-'}&#8358;${Number(transaction.amount.replace(/[^\d]/g, '')).toLocaleString()}
+</p>
+  </div>
+  <div class="phone-number-div">
+<p class="phone-number">${transaction.number}</p>
+  </div>
+  <div class="transaction-status-and-time">
+  <p class="transaction-time">${transaction.time}</p>
+<p class="transaction-status">Completed</p>
+  </div>
+  <!--<div class="session-id-div">
+<p class="session-id">Session ID: ${transaction.sessionID || "Not Available"}</p>
+  </div> -->
+<hr class="seperator">
+  </div>
+`;
+
+// Make each transaction clickable
+transactionDiv.addEventListener("click", function() {
+  localStorage.setItem("selectedTransaction", JSON.stringify(transaction));
+  window.location.href = "Individual-Receipt.html";
+});
+
+// Append the transaction to the list
+transactionList.appendChild(transactionDiv);
+});
+}
+// Load transactions when the page loads
+window.addEventListener("DOMContentLoaded", loadTransactions);
+});
+  </script>
+
+
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+//localStorage.removeItem("quicksubMainBalance");
+//localStorage.removeItem("quicksubTransactions");
+function generateSessionID() {
+  let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let sessionID = "";
+for (let i = 0; i < 25; i++) {
+  sessionID += characters.charAt(Math.floor(Math.random() * characters.length));
+}
+  return sessionID;
+}
+
+var currentTime = new Date().toLocaleString();
+var phoneNumber = localStorage.getItem("quicksubPhoneNumber") || "";
+var mainBalance = parseFloat(localStorage.getItem("quicksubMainBalance")) || 0;
+//var mainBalance = setMainBalance();
+var depositAmount = 500;
+
+function fixDeposit() {
+let transactionHistory = JSON.parse(localStorage.getItem("quicksubTransactions")) || [];
+let transaction = {
+  type: `Funding Wallet`,
+  amount: `₦${depositAmount}`,
+  number: `${phoneNumber}`,
+  time: `${currentTime}`,
+  sessionID: generateSessionID()
+};
+mainBalance += depositAmount;
+localStorage.setItem("quicksubMainBalance", mainBalance.toString());
+localStorage.setItem("quicksubSessionID", generateSessionID());
+
+transactionHistory.push(transaction);
+localStorage.setItem("quicksubTransactions", JSON.stringify(transactionHistory));
+}
+
+
+//localStorage.removeItem("quicksubDepositFixed2");
+var emailAddress = localStorage.getItem("quicksubEmailAddress") || "";
+let depositFixed = localStorage.getItem("quicksubDepositFixed") || null;
+let depositFixed2 = localStorage.getItem("quicksubDepositFixed2") || null;
+
+if (depositFixed === null && emailAddress === "EMAIL@gmail.com") {
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed === null && emailAddress === "victorebube365@gmail.com") {
+  depositAmount = 1500;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed2 === null && emailAddress === "isahkabiru5885@gmail.com") {
+  depositAmount = 600;
+  fixDeposit();
+  depositFixed2 = "Fixed";
+  localStorage.setItem("quicksubDepositFixed2", depositFixed2);
+} else if (depositFixed === null && emailAddress === "kunae5192@gmail.com") {
+  depositAmount = 400;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed === null && emailAddress === "godwinproff1@gmail.com") {
+  depositAmount = 700;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed === null && emailAddress === "Ndaeyo999@gmail.com") {
+  depositAmount = 500;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed === null && emailAddress === "christianegba08@gmail.com") {
+  depositAmount = 300;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed === null && emailAddress === "EMAIL5@gmail.com") {
+  depositAmount = 000;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed === null && emailAddress === "EMAIL6@gmail.com") {
+  depositAmount = 000;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed === null && emailAddress === "EMAIL7@gmail.com") {
+  depositAmount = 000;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed === null && emailAddress === "EMAIL8@gmail.com") {
+  depositAmount = 000;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed === null && emailAddress === "EMAIL9@gmail.com") {
+  depositAmount = 000;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+} else if (depositFixed === null && emailAddress === "EMAIL10@gmail.com") {
+  depositAmount = 000;
+  fixDeposit();
+  depositFixed = "Fixed";
+  localStorage.setItem("quicksubDepositFixed", depositFixed);
+}
+});
+  </script>
+
+  <script>
+var walletBalanceP = document.getElementById("wallet-balance-p");
+var balanceP = document.getElementById("balance-p");
+
+walletBalanceP.addEventListener("dblclick", function() {
+  window.location.href = "More/View-LocalStorage.html";
+});
+
+balanceP.addEventListener("dblclick", function() {
+  window.location.href = "More/Restore-LocalStorage.html";
+});
+
+
+  </script>
+
+</body>
+</html>

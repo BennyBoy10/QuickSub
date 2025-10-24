@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Deposit-Money.css">
+
+  <title>Deposit Money - QuickSub</title>
+
+  <style>
+a {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="main-body">
+<a href="#" id="scroll-up"></a>
+  <div class="top">
+  <div class="left-arrow-div">
+<a href="index.html">
+<p id="left-arrow-p">&#x276E;</p>
+</a>
+  </div>
+  <div class="deposit-money-div">
+<p id="deposit-money-p">Deposit Money</p>
+  </div>
+  </div>
+<br><br>
+<br>
+
+  <div class="error-div">
+  <div class="error-svg-div">
+<img src="Images/Tick.svg" id="error-svg">
+  </div>
+  <div class="error-div-texts">
+<p id="error-p">Success</p>
+<p id="error-description">Account number copied!!</p>
+  </div>
+  </div>
+
+
+  <div class="bank-transfer-div">
+  <div class="transfer-funds">
+<p id="bank-transfer-p">Bank Transfer</p>
+<p id="receive-funds-p">Fund your wallet instantly by making a transfer to the account details below.</p>
+<p id="min-max-p">MIN: &#8358;300.00 - MAX: &#8358;99,999.00</p>
+  </div>
+
+  <div class="bank-accounts-div">
+  <div class="top-account-div">
+<p id="guide1">Money transferred to this account will be added to your wallet automatically.</p>
+  </div>
+
+  <div class="bottom-account-div">
+  <div class="left-div">
+<p id="bank-name-p" class="slim-texts">BANK NAME</p>
+<p id="account-number-p" class="slim-texts">ACCOUNT NUMBER</p>
+<p id="account-name" class="slim-texts">Account Name</p>
+  </div>
+  <div class="right-div">
+<p id="bank-name" class="slim-texts">MoniePoint</p>
+<p id="account-number">6068750375</p>
+<p id="account-name-p" class="slim-texts">Nellobyte-MAS</p>
+  </div>
+  </div>
+<p id="tap-to-copy">Tap to copy account number</p>
+  </div>
+
+  <div class="generate-account-div">
+<button id="generate-account-button">Get Account Number</button>
+  </div>
+  </div>
+
+
+  <div class="funding-option-div">
+<hr class="seperator2">
+<p id="use-funding-method-below"> Or use funding method below</p>
+<hr class="seperator2">
+  </div>
+
+
+  <div class="alternate-payment-methods-div">
+<img src="Images/Wallet.svg" id="alternate-payment-methods-svg">
+  <div class="alternate-payment-methods-texts">
+<p id="alternate-payment-methods-p"><!--Alternate-->Other Payment Methods <span class="hot-deposit-reward">+&#8358;100 bonus</span></p>
+<p id="payment-methods-names">OPay, USSD, Debit/Credit Card, Transfer etc</p>
+  </div>
+  </div>
+
+<!--
+  <div class="vitapay-epin-div">
+<img src="Images/Gift.svg" id="vitapay-epin-svg">
+  <div class="vitapay-epin-texts">
+<p id="vitapay-epin-p">QuickSub ePin</p>
+<p id="feature-coming-soon">This feature is coming soon.</p>
+  </div>
+  </div>
+-->
+<br><br>
+<br>
+  </div>
+
+
+  <div class="manual-section">
+  <div class="manual-top">
+  <div class="left-arrow-div">
+<a href="index.html">
+<p id="manual-left-arrow-p">&#x276E;</p>
+</a>
+  </div>
+  <div class="top-text-div">
+<p id="top-text-p">Fund your Wallet</p>
+  </div>
+  </div>
+<br><br>
+<br>
+
+  <div class="alternate-deposit-method-div">
+<h2 id="alternate-deposit-method-h">Secure Gateway</h2>
+<p id="fund-with-avai-pay-met">Bank transfer, OPay, USSD, Visa, Mastercard, Verve etc &nbsp; <!--<span class="hot-deposit-reward">+&#8358;100 bonus</span>--></p>
+  <div class="svg-div">
+<img src="Images/Wallet.svg" id="wallet-svg">
+  </div>
+
+<form id="manualDepositForm">
+  <div class="amount-input-div">
+<input type="text" id="manual-amount" placeholder="₦100 - ₦99,999" minlength="4" maxlength="10" pattern="₦[1-9]\d{0,2}(,\d{3})*" required>
+
+<select id="dropdownMenu">
+<option value="paystack">Secure Gateway (Paystack)</option>
+</select>
+<br><br>
+<p id="minimum-deposit-text"><b>&#8358;100</b> is the minimum deposit due to bank charges.</p>
+
+  <div class="checkbox-div">
+<input type="checkbox" id="checkbox" checked>
+<label for="checkbox" id="checkbox-label">Save payment details for future transactions</label>
+  </div>
+<br><br>
+
+  <div class="button-div">
+<button id="add-funds-button">Proceed</button>
+  </div>
+<br><br>
+</form>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+
+  <script>
+window.addEventListener("DOMContentLoaded", function () {
+var registeredAccount = localStorage.getItem("quicksubRegisteredAccount");
+var accountNumberDiv = document.querySelector(".bank-accounts-div");
+var generateAccountDiv = document.querySelector(".generate-account-div");
+//localStorage.removeItem("quicksubRegisteredAccount");
+
+if (registeredAccount) {
+  accountNumberDiv.style.display = "flex";
+  generateAccountDiv.style.display = "none";
+} else {
+  accountNumberDiv.style.display = "none";
+  generateAccountDiv.style.display = "block";
+}
+
+generateAccountDiv.addEventListener("click", function() {
+  localStorage.setItem("quicksubRegisteredAccount", true);
+  alert("Account Generated Successfully!");
+  generateAccountDiv.style.display = "none";
+  accountNumberDiv.style.display = "flex";
+});
+
+
+
+  const amountInput = document.getElementById("manual-amount");
+
+// Retrieve stored user information
+  let fullName = localStorage.getItem("quicksubFullName") || "";
+  let email = localStorage.getItem("quicksubEmailAddress") || "";
+  let phone = localStorage.getItem("quicksubPhoneNumber") || "";
+
+// Split full name into first and last name
+  let nameParts = fullName.trim().split(" ");
+  let firstName = nameParts[0] || "";
+  let lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "";
+
+function formatAmount(value) {
+  // Remove non-numeric characters except digits
+  let numericValue = value.replace(/\D/g, "");
+
+  // Convert to a number and format with commas
+  let formattedValue = new Intl.NumberFormat("en-NG").format(numericValue);
+
+  return numericValue ? `₦${formattedValue}` : "₦";
+}
+
+amountInput.addEventListener("input", function () {
+  let cursorPosition = this.selectionStart;
+  let previousLength = this.value.length;
+
+  this.value = formatAmount(this.value);
+
+  // Adjust cursor position after formatting
+  let newLength = this.value.length;
+  this.selectionStart = this.selectionEnd = cursorPosition + (newLength - previousLength);
+});
+
+amountInput.addEventListener("blur", function () {
+if (this.value === "₦") {
+  this.value = "₦0";
+}
+});
+
+function getRawAmount() {
+  return amountInput.value.replace(/₦|,/g, "");
+}
+
+amountInput.addEventListener("focus", function () {
+  amountInput.style.border = "1px solid transparent";
+  var minimumDepositP = document.getElementById("minimum-deposit-text");
+  minimumDepositP.style.display = "none";
+});
+
+/*
+function redirectToPaystack() {
+  let amount = getRawAmount();
+if (amount && amount > 0) {
+  localStorage.setItem("quicksubDepositAmount", amount);
+  document.getElementById("add-funds-button").disabled = true;
+window.location.href = `https://paystack.shop/pay/quicksub?amount=${amount}&email=${encodeURIComponent(email)}&first_name=${encodeURIComponent(firstName)}&last_name=${encodeURIComponent(lastName)}`;
+}
+}
+*/
+
+var alternateDepositMethodH = document.getElementById("alternate-deposit-method-h");
+alternateDepositMethodH.textContent = "Secure Gateway (SW)";
+
+function redirectToPaystack() {
+  let amount = getRawAmount();
+if (amount && amount > 0) {
+  localStorage.setItem("quicksubDepositAmount", amount);
+  document.getElementById("add-funds-button").disabled = true;
+setTimeout(function() {
+  document.getElementById("add-funds-button").disabled = false;
+}, 3000);
+
+var Channels = ["card"];
+if (amount >=  100) {
+  Channels = ["card", "bank", "ussd", "bank_transfer", "OPay"];
+}
+
+var handler = PaystackPop.setup({
+// key: "pk_test_3161298d9cf10d17182805fe65a5cba8940e2a74", // PK_Test
+// EXC-Nellobytes_NG */ key: "pk_live_9024cfcf98710eb4b7dc39df051140c5268f77f4", //PK_Live
+// EXC-Nellobytes_CO */ key: "pk_live_0f24eaac3c3e01aa48d36cafa52b5b91a1aaecee",
+// EXC-Nellobyte_LTD */ key: "pk_live_8c3dce7f323e59926dbd74ed1fa99e3e682d56d9",
+// EXC-Nellobyte_CO */ key: "pk_live_0f24eaac3c3e01aa48d36cafa52b5b91a1aaecee",
+// EXC-Nellobyte_INC */ key: "pk_live_ec977d536b43f77042702ceab668f15acaeccd16",
+// EXC-VTP */ key: "pk_live_c3867d385e7aedff0c8e426b5e067abce3cc73bd",
+// EXC-NVE */ key: "pk_live_51b77a0476dc6a84116fd99cd6620e18fd4e36e8",
+// EXC-GS */ key: "pk_live_2fd9d5e3b862d6be2f57a11160945c100ff266a2",
+// EXC- */ key: "",
+// EXC- */ key: "",
+// EXC- */ key: "",
+// EXC- */ key: "",
+// PC5-Lockbit */ key: "pk_live_d743904684ec92b70e838caf239ec80c4eded4bd",
+// PC5-Cracker key: "pk_live_360b057499205d2a2e03f59b416b2bef143f33b4",
+// PC5-Promotional_Offers */ key: "pk_live_dc11b94312af5f7a7e801ba714f1798800ac8a5d",
+// PC5-CWA key: "pk_live_5861a26f27d4f9681ed0c0cff9b63e25446cb5de",
+// PC5-FortunePay */ key: "pk_live_529af740880219159cbf8640371c04db151280b9",
+// PC5-SandWorm key: "pk_live_a7e1f3adf652a34a006a5a221feb83b108b75f41",
+/* PC5-SandWarm_NG */ key: "pk_live_1f3829b568325a23c8e1c52150cadf7e55e0476c",
+// PC5-SandWorm_LTD */ key: "pk_live_0c199e188a02da25e239cbc15ba5c63c4a916bdb",
+// PC5-SandWorm_INC */ key: "pk_live_c38e267d7b5c0862a099ff9f4e66cef9efdfa664",
+// PC5-FortunePay_NG */ key: "pk_live_77c3994f0e74d272c51cd975f709efedc8d54e1a",
+// PC5-FortunePay_LTD */ key: "pk_live_47d9284ae5fbb7f5639b991a42af0dfbfa05c4f5",
+// PC5-FortunePay_INC */ key: "pk_live_fca09e9befc7ec7239733da68383c0b2cb004d88",
+// PC5-Crackers_NG */ key: "pk_live_155149cd2a7e509ec172daf94738414bec6568e3",
+// PC5-Crackers_LTD */ key: "pk_live_6ac87cf4c7f55dabef5071cd87f26edf51333251",
+// PC5-Crackers_INC */ key: "pk_live_c4cd46dca218dfbeb34114d945ba6bc148cd3736",
+// PC5-Crackers_CO */ key: "pk_live_572eab5aeb8b19308e322281c8d1b468b03054ed",
+// PC5- key: "",
+// PC5- key: "",
+// PC5- key: "",
+// PC5- key: "",
+// PC5- key: "",
+// PC5- key: "",
+// HT8-Nellobyte_Systems_Ltd key: "pk_live_c70d5b7c6a009f22fc844eb6dd9f5aeb415939bd",
+// HT8-Nellobyte_LTD key: "pk_live_60d5bd722b847b67f69dcf19663522e83a4266d0",
+// HT8-Nellobyte_NG */ key: "pk_live_1abd5ca9940110b8ebcc6b1e50dad3c79f512275",
+// HT8-Nellobyte_INC key: "pk_live_f707840680aabd5f7c1734aaf0127548e0c1570c",
+// HT8-KeelDisc key: "pk_live_146c5feb62f3ee58a010aac876dd0aa70584af97",
+// HT8-KeelDisc_Ltd key: "pk_live_f72be6a3791561a6aab22a5747ab69f4f4894878",
+// HT8-KeelDisc_NG key: "pk_live_fd94493b1af6038f608bb3873885f5794514695c",
+// HT8-KeelDisc_INC key: "pk_live_dcc080e80a7db1aa1c57ba526cf4848e1690e5e6",
+// HT8-Stocksnet key: "pk_live_b92a470fba34f961f38e777cfb42e334004b1cf5",
+// HT8-Stocksnet_NG key: "pk_live_1c1946b00db8401092368a1da339451f9e21692e",
+// HT8-Stocksnet_LTD key: "pk_live_32f28d78aceaae4f5c3d7c4610cc0a51ae975fd3",
+// HT8-Stocksnet_INC */ key: "pk_live_b5fb4debad030b0ca201e61aaccfe6a3d02d3869",
+// HT8- key: "",
+// HT8- key: "",
+// HT8- key: "",
+// HT8- key: "",
+// HT8- key: "",
+// HT8- key: "",
+// HT8- key: "",
+// VIC-JaySub */ key: "pk_live_31be19e362616b79fcd3a5c8c2aa691e649796cc",
+// VIC-JaySub_NG */ key: "pk_live_292691be3b02cde0bf909c933429fea6dad34186",
+// VIC-JaySub_INC */ key: "pk_live_85d80243f305f662774e1852398472d183711ce4",
+// VIC-JaySub_LTD */ key: "pk_live_b44ac71997bc4af3a70d321352a0eac44cdea071",
+// VIC-JaySub_PLC */ key: "pk_live_1780cdef6cc085ff37d2ab2e2c0e40817df8e662",
+// VIC- key: "",
+// VIC- key: "",
+// VIC- key: "",
+// VIC- key: "",
+// SQR-QuickSub */ key: "pk_live_16fab2d96a74df7dcb9c4ccfb0cf1cdcfd5622aa",
+// SQR-QuickSub_NG */ key: "pk_live_d3602d4e3b8224fbabdbdbb95f02b720d89428e8",
+// SQR-QuickSub_LTD */ key: "pk_live_5c25c32af4ec5d454eeff86ee6ca2bdf93e5d27c",
+// SQR-QuickSub_CO */ key: "pk_live_861e159fb2c90271d30b8fa2233262967007cf7e",
+// SQR-QuickSub_INC */ key: "pk_live_c0f4ddd68bcfb9cdf7623c710af5a63ef1a7d169",
+// SQR- */ key: "",
+// SQR- */ key: "",
+// SQR- */ key: "",
+// SQR- */ key: "",
+  email: email,
+  amount: amount * 100,
+// amount: 4 * 100,
+  currency: "NGN",
+  channels: Channels,
+
+
+callback: function (response) {
+  console.log("✅ Paystack Response:", response);
+  alert("Payment Successful ✅");
+  window.location.href = `Payment-Successful.html`;
+},
+
+onClose: function () {
+  alert("❌ Payment not Successful.");
+}
+});
+
+  handler.openIframe();
+}
+}
+
+document.getElementById("manualDepositForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+  const amountInput = document.getElementById("manual-amount");
+  let rawAmount = getRawAmount();
+  let minimumDepositP = document.getElementById("minimum-deposit-text");
+
+  // Ensure the amount is at least  100
+if (parseInt(rawAmount, 10) < 100 || isNaN(parseInt(rawAmount, 10))) {
+  //alert("Please enter a valid amount of at least ₦100.");
+  minimumDepositP.style.display = "block";
+  document.getElementById("add-funds-button").disabled = true;
+  amountInput.style.border = "1px solid #F47265";
+} else {
+  redirectToPaystack();
+}
+setTimeout(function() {
+  document.getElementById("add-funds-button").disabled = false;
+}, 3000);
+  //console.log("Raw amount:", rawAmount); // Use this value as needed
+});
+});
+
+
+var mainBody = document.querySelector(".main-body");
+var alternatePaymentMethods = document.querySelector(".alternate-payment-methods-div");
+var manualSection = document.querySelector(".manual-section");
+var manualArrow = document.getElementById("manual-left-arrow-p");
+
+alternatePaymentMethods.addEventListener("click", function() {
+  mainBody.style.display = "none";
+  manualSection.style.display = "block";
+});
+/*
+manualArrow.addEventListener("click", function() {
+  manualSection.style.display = "none";
+  mainBody.style.display = "block";
+});
+*/
+  </script>
+
+  <script>
+var scrollUp = document.getElementById("scroll-up");
+var errorDiv = document.querySelector(".error-div");
+
+function showError() {
+  scrollUp.click();
+  errorDiv.style.display = "block";
+  errorDiv.style.top = "-100px";
+setTimeout(function() {
+  errorDiv.style.top = "10px";
+}, 10);
+setTimeout(function() {
+  errorDiv.style.top = "-100px";
+setTimeout(function() {
+  errorDiv.style.display = "none";
+}, 500); // wait for 0.5s for the slide-up animation to complete
+}, 4000); // wait for 3s before sliding up
+}
+
+document.querySelector(".bank-accounts-div").addEventListener("click", function() {
+  const text = document.getElementById("account-number").textContent;
+  navigator.clipboard.writeText(text)
+.then(() => {
+  showError();
+  console.log("Account number copied! ✅");
+})
+.catch(err => {
+  alert("Failed to copy: ", err);
+});
+});
+  </script>
+
+</body>
+</html>

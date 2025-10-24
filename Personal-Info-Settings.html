@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Personal-Info-Settings.css">
+
+  <title>Personal Info Settings - QuickSub</title>
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+<a href="#" id="scroll-up"></a>
+  <div class="top">
+  <div class="left-arrow-div">
+<a href="Account-Settings.html">
+<p id="left-arrow-p">&#x276E;</p>
+</a>
+  </div>
+  <div class="personal-info-settings-div">
+<p id="personal-info-settings">Personal Info Settings</p>
+  </div>
+  </div>
+<br><br>
+<br>
+
+  <div class="error-div">
+  <div class="error-svg-div">
+<img src="Images/About.svg" id="error-svg">
+  </div>
+  <div class="error-div-texts">
+<p id="error-p">Successful!</p>
+<p id="error-description">Details Updated Successfully.</p>
+  </div>
+  </div>
+
+
+  <div class="main-body">
+<form id="updateInfoForm">
+  <div class="names-phone-email">
+
+<label id="nickname-label" for="nickname-input">Nick name</label>
+  <div class="nickname-div">
+<input type="text" id="nickname-input" placeholder="Nick name" minlength="2" maxlength="20" required>
+  </div>
+
+<label id="names-label" for="names-input">Full names</label>
+  <div class="names-div">
+<input type="text" id="names-input" placeholder="First Last" minlength="5" required>
+  </div>
+
+<label id="phone-label" for="phone-input">Phone number</label>
+  <div class="phone-div">
+<input type="tel" id="phone-input" placeholder="080 1122 3344" minlength="11" maxlength="11" required>
+  </div>
+
+<label id="email-label" for="email-input">Email Address</label>
+  <div class="email-div">
+<input type="email" id="email-input" placeholder="email@example.com" minlength="5" required>
+  </div>
+  </div>
+<br>
+
+  <div class="update-button-div">
+<button id="update-button">Update</button>
+  </div>
+</form>
+  </div>
+<br><br>
+  </div>
+
+<script src="Script.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+});
+
+var scrollUp = document.getElementById("scroll-up");
+var errorDiv = document.querySelector(".error-div");
+
+
+function showError() {
+  scrollUp.click();
+  errorDiv.style.display = "block";
+  errorDiv.style.top = "-100px";
+setTimeout(function() {
+  errorDiv.style.top = "10px";
+}, 10);
+setTimeout(function() {
+  errorDiv.style.top = "-100px";
+setTimeout(function() {
+  errorDiv.style.display = "none";
+}, 500); // wait for 0.5s for the slide-up animation to complete
+}, 3000); // wait for 3s before sliding up
+}
+
+var nickName = localStorage.getItem("quicksubNickName");
+var fullName = localStorage.getItem("quicksubFullName");
+var phoneNumber = localStorage.getItem("quicksubPhoneNumber");
+var emailAddress = localStorage.getItem("quicksubEmailAddress");
+
+var nickNameInput = document.getElementById("nickname-input");
+var namesInput = document.getElementById("names-input");
+var phoneInput = document.getElementById("phone-input");
+var emailInput = document.getElementById("email-input");
+
+var Form = document.getElementById("updateInfoForm");
+var updateButton = document.getElementById("update-button");
+
+nickNameInput.value = nickName;
+namesInput.value = fullName;
+phoneInput.value = phoneNumber;
+emailInput.value = emailAddress;
+
+function updateDetails(newNickName, newNames, newPhoneNumber, newEmailAddress) {
+  localStorage.setItem("quicksubNickName", newNickName);
+  localStorage.setItem("quicksubFullName", newNames);
+  localStorage.setItem("quicksubPhoneNumber", newPhoneNumber);
+  localStorage.setItem("quicksubEmailAddress", newEmailAddress);
+}
+
+//updateButton.addEventListener("click",
+updateInfoForm.addEventListener("submit",
+function(event) {
+  event.preventDefault();
+  var newNickName = nickNameInput.value.trimEnd();
+  var newNames = namesInput.value.trimEnd();
+  var newPhoneNumber = phoneInput.value.replace(/\s+/g, ""); // Remove all spaces
+  var newEmailAddress = emailInput.value.replace(/\s+/g, "");
+  updateDetails(newNickName, newNames, newPhoneNumber, newEmailAddress);
+  showError();
+setTimeout(function() {
+  window.location.href = "index.html";
+}, 1500);
+});
+
+  </script>
+
+</body>
+</html>

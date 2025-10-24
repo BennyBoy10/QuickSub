@@ -1,0 +1,142 @@
+
+.container {
+ margin: 0 auto;
+ width: 95%;
+ padding: 7px;
+ border-radius: 8px;
+ color: #FFF;
+ background-color: #303030;
+}
+
+.error-div {
+  position: relative;
+  animation: drop-down 0.5s ease-in-out;
+}
+@keyframes drop-down {
+0% {
+  top: -100px;
+  opacity: 0;
+}
+100% {
+  top: 0;
+  opacity: 1;
+}
+}
+
+.error-div {
+  display: none;
+  position: absolute;
+  padding: 0 10px 15px 0;
+  width: 92%;
+  top: 10px;
+  left: 10px;
+  border-radius: 10px;
+  color: #FFF;
+  
+  /* background: linear-gradient(to right, #4D1DFF 3%, #46974A 3%);*/
+  background: linear-gradient(to right, #FFD700 3%, #00A86B 3%);
+  background-size: 100% 100%;
+  overflow: hidden;
+  z-index: 1000;
+}
+.error-svg-div {
+  margin: 40px 0 0 15px;
+  width: 7%;
+}
+#error-svg {
+  width: 100%;
+}
+.error-div-texts {
+  display: flex;
+  flex-direction: column;
+  margin-top: -50px;
+  margin-left: 50px;
+}
+.error-div-texts * {
+  margin: 0;
+}
+#error-p {
+  font-size: 17px;
+  font-weight: bold;
+}
+#error-description {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.main-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#successful-gif {
+  width: 80%;
+}
+
+#data-bundle {
+  color: #2788D4;
+  font-weight: 500;
+}
+#earned-commission {
+  color: #00B875;
+  font-weight: 500;
+}
+
+.view-transaction-and-save-beneficiary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 500;
+}
+.view-transaction-div {
+  padding: 7px;
+  width: 44.5%;
+  border-radius: 10px;
+  background-color: #424242;
+}
+.div-svg {
+  width: 20%;
+}
+.save-beneficiary-div {
+  padding: 7px;
+  width: 44.5%;
+  border-radius: 10px;
+  background-color: #424242;
+}
+
+.bottom-buttons-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  padding: 10px 20px 10px 20px;
+}
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  width: 47.5%;
+  height: 45px;
+  gap: 3px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 10px;
+  color: #FFF;
+}
+.button-svg {
+  width: 10%;
+}
+#buy-again {
+  background-color: #00A86B;
+}
+#close {
+  background-color: #F44236;
+}
+
+
+
+
+

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Individual-Receipt.css">
+
+  <title>Individual Receipt - QuickSub</title>
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+<!--  <div class="top">
+<!-- <a href="index.html" id="left-arrow">&#x276E;</a> --><!--
+<h2 id="receipt-top-h">Receipt</h2>
+  </div> -->
+  <div class="top">
+  <div class="left-arrow-div">
+<a href="javascript:history.go(-1)">
+<p id="left-arrow-p">&#x276E;</p>
+</a>
+  </div>
+  <div class="receipt-top-div">
+<p id="receipt-top-p">Receipt</p>
+  </div>
+  </div>
+<br><br>
+
+  <div class="balances-div">
+  <div class="available-balance-div">
+<p id="available-balance-p">AVAILABLE BALANCE</p>
+<h2 id="balance-h">{&#8358;}</h2>
+  </div>
+  </div>
+<br><br>
+<br><br>
+<br>
+
+
+  <div class="main-body">
+  <div class="network-logo-div">
+<img src="Images/MTN-Logo.jpg" id="network-logo-img">
+  </div>
+
+<!--
+  <div class="green-ticks-div">
+<img src="Images/Green-Tick.svg" id="green-tick1" class="green-tick">
+<hr class="seperator-green">
+<img src="Images/Green-Tick.svg" id="green-tick2" class="green-tick">
+<hr class="seperator-green">
+<img src="Images/Green-Tick.svg" id="green-tick3" class="green-tick">
+  </div>
+
+  <div class="initiated-processing-completed">
+  <div class="initiated-div">
+<p id="initiated-p">Initiated</p>
+<span id="start-time" class="transaction-time">3:30 PM</span>
+  </div>
+  <div class="processing-div">
+<p id="processing-p">Processing</p>
+  </div>
+  <div class="completed-div">
+<p id="completed-p">Completed</p>
+<span id="end-time" class="transaction-time">3:31 PM</span>
+  </div>
+  </div>
+
+<p id="commission-earned-p">You earned the sum of <span id="commission-p">&#8358;5</span> for this transaction.</p>
+-->
+
+
+  </div>
+<br><br>
+
+  <div class="transaction-info-div">
+  <div class="status-date-div">
+<h3 id="status-h">Status</h3>
+<h3 id="date-h">Date</h3>
+  </div>
+
+  <div class="completed-recharge-date">
+<p id="completed-status">Completed</p>
+<p id="recharge-date-p">Feb 19th 25 10:20 PM</p>
+  </div>
+
+  <div class="session-id-div">
+<p id="session-id-p">SessionID</p>
+<p id="session-id-key">7965180605310728724337410</p>
+  </div>
+<hr class="seperator">
+
+  <div class="recipient-div">
+<p id="recipient-p">Recipient</p>
+<p id="recipient-phone">{recipientPhone}</p>
+  </div>
+<hr class="seperator" id="recipient-seperator">
+
+  <div class="package-div">
+<p id="package-p">Package</p>
+<p id="package-info">MTN 30GB - 60 Days</p>
+  </div>
+<hr class="seperator">
+
+  <div class="amount-div">
+<p id="amount-p">Amount</p>
+<p id="transaction-amount">&#8358;2,000</p>
+  </div>
+<hr class="seperator">
+
+  <div class="description-div">
+<p id="description-p">Description</p>
+<p id="transaction-description">MTN 30GB - 60 Days</p>
+  </div>
+<hr class="seperator" style="display: none;">
+<br>
+  </div>
+
+  <div class="delete-receipt-div">
+<button id="delete-receipt-button">Delete Receipt</button>
+  </div>
+
+
+  <div class="bottom-buttons-div">
+<button id="buy-again" class="button">
+<img src="Images/Refresh.svg" class="button-svg">
+Buy Again</button>
+<button id="complain" class="button">
+<img src="Images/Complain.svg" class="button-svg">
+Complain</button>
+  </div>
+
+<!--
+  <footer>
+<p id="copyright-claim-p">Copyright &copy; QuickSub 2025. All Rights Reserved.</p>
+  </footer>
+-->
+<br><br>
+  </div>
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+var mainBalance = parseInt(localStorage.getItem("quicksubMainBalance"))  || 0;
+var balanceH = document.getElementById("balance-h");
+function setTotalBalance() {
+  balanceH.innerHTML = `&#8358;${mainBalance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+}
+setTotalBalance();
+});
+
+
+var buyAgain = document.getElementById("buy-again");
+var packageInfo = document.getElementById("package-info");
+var complainButton = document.getElementById("complain");
+
+
+window.addEventListener("DOMContentLoaded", function() {
+  let transaction = JSON.parse(localStorage.getItem("selectedTransaction"));
+
+/*if (!transaction) {
+  document.body.innerHTML = "<h2 style='color: white; text-align: center;'>No transaction found!</h2>";
+  return;
+} */
+
+// Set the transaction details
+  document.getElementById("network-logo-img").src = `Images/${transaction.type.split(" ")[0]}-Logo.jpg`;
+  document.getElementById("package-info").textContent = transaction.type;
+  //document.getElementById("transaction-amount").textContent = transaction.amount;
+
+var transactionAmount = transaction.amount;
+
+transactionAmount = transactionAmount.replace(/\D/g, "");
+document.getElementById("transaction-amount").innerHTML = `&#8358;${Number(transactionAmount).toLocaleString()}`;
+
+
+  document.getElementById("recipient-phone").textContent = transaction.number;
+  document.getElementById("recharge-date-p").textContent = transaction.time;
+
+// Function to generate a random 25-character Session ID
+function generateSessionID() {
+  let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let sessionID = "";
+for (let i = 0; i < 25; i++) {
+  sessionID += characters.charAt(Math.floor(Math.random() * characters.length));
+}
+  return sessionID;
+}
+
+// Ensure session ID exists and is stored permanently
+  let transactions = JSON.parse(localStorage.getItem("quicksubTransactions")) || [];
+  let storedTransaction = transactions.find(t => t.time === transaction.time && t.number === transaction.number);
+
+if (storedTransaction && storedTransaction.sessionID) {
+  transaction.sessionID = storedTransaction.sessionID;
+} else {
+  transaction.sessionID = generateSessionID();
+if (storedTransaction) {
+  storedTransaction.sessionID = transaction.sessionID;
+}
+  localStorage.setItem("quicksubTransactions", JSON.stringify(transactions));
+}
+
+// Display session ID
+document.getElementById("session-id-key").textContent = transaction.sessionID;
+
+// Extract the time from the transaction's date
+  let dateObj = new Date(transaction.time);
+  let hours = dateObj.getHours();
+  let minutes = dateObj.getMinutes();
+  let ampm = hours >= 12 ? "PM" : "AM";
+
+// Convert 24-hour time to 12-hour format
+  hours = hours % 12 || 12; 
+  minutes = minutes.toString().padStart(2, "0");
+
+// Format the time
+  let formattedTime = `${hours}:${minutes} ${ampm}`;
+
+// Set start and end time (assuming process takes 1 minute)
+  document.getElementById("start-time").textContent = formattedTime;
+  document.getElementById("end-time").textContent = `${hours}:${(parseInt(minutes) + 1).toString().padStart(2, "0")} ${ampm}`;
+  document.getElementById("transaction-description").textContent = transaction.type;
+if (transaction.type.includes("Bonus")) {
+  var commissionEarnedP = document.getElementById("commission-earned-p");
+  commissionEarnedP.style.display = "none";
+}
+if (transaction.type.includes("PIN")) {
+  var recipientP = document.getElementById("recipient-p");
+  recipientPhone = document.getElementById("recipient-phone");
+  var recipientDiv = document.querySelector(".recipient-div");
+  recipientP.textContent = "Quantity";
+  var transactionNumber = transaction.number.replace(/\D/g, '');
+  recipientPhone.innerHTML = `${transactionNumber} Pieces`;
+}
+});
+
+
+buyAgain.addEventListener("click", function() {
+  var packageText = packageInfo.textContent;
+if (packageText.includes("Airtime")) {
+  window.location.href = "Buy-Airtime.html";
+} else if (packageText.includes("GB")) {
+  window.location.href = "Data-Bundles.html";
+} else if (packageText.includes("PIN")) {
+  window.location.href = "Print-VTU.html";
+}
+});
+
+complainButton.addEventListener("click", function() {
+  var sessionIDKey = document.getElementById("session-id-key").textContent;
+  window.location.href = 'Contact-Us.html?sessionID=' + encodeURIComponent(sessionIDKey);
+});
+
+var networkLogoImg = document.getElementById("network-logo-img");
+var deleteReceiptDiv = document.querySelector(".delete-receipt-div");
+let isHidden = true;
+
+networkLogoImg.addEventListener("dblclick", function() {
+if (isHidden) {
+  deleteReceiptDiv.style.display = "flex";
+} else {
+  deleteReceiptDiv.style.display = "none";
+}
+  isHidden = !isHidden; // Toggle the state
+});
+
+
+document.getElementById("delete-receipt-button").addEventListener("click", function() {
+  let sessionID = document.getElementById("session-id-key").textContent.trim();  
+  let transactions = JSON.parse(localStorage.getItem("quicksubTransactions")) || [];
+
+// Find the transaction with the matching session ID
+  let index = transactions.findIndex(t => t.sessionID === sessionID);
+
+if (index !== -1) {
+  let confirmDelete = confirm("Are you sure you want to delete this receipt?");
+if (confirmDelete) {
+  transactions.splice(index, 1); // Remove the transaction
+  localStorage.setItem("quicksubTransactions", JSON.stringify(transactions));
+  alert("Receipt Deleted Successfully!");
+  window.location.href = "index.html";
+}
+} else {
+alert("Receipt not found!");
+}
+});
+
+
+  </script>
+
+</body>
+</html>

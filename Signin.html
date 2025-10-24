@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Signin.css">
+
+  <title>Signin - QuickSub</title>
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-family: Arial, sans-serif;
+ min-height: 100vh;
+ margin: 0;
+ padding: 0;
+ background-color: #303030;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+<a href="#" id="scroll-up"></a>
+<!--
+  <div class="upper-body">
+<br>
+  <div class="logo-and-name-div">
+  <div class="logo-div">
+<img src="Images/QuickSub-Icon.png" id="profile-pic">
+  </div>
+<h1 id="name-name">QuickSub</h1>
+  </div>
+<br><br>
+  </div>
+-->
+
+  <div class="error-div">
+  <div class="error-svg-div">
+<img src="Images/About.svg" id="error-svg">
+  </div>
+  <div class="error-div-texts">
+<p id="error-p">Error!</p>
+<p id="error-description">This feature is temporarily unavailable. Please try again later.</p>
+  </div>
+  </div>
+
+  <div class="main-body">
+<br>
+<h1 id="signin-h">Sign In</h1>
+
+<form id="signinForm">
+  <div class="phone-email">
+  <div class="phone-email-div">
+<img src="Images/Phone.svg" id="phone-svg">
+<input type="text" id="phone-email-input" placeholder="Phone Number/Email" minlength="11" required>
+  </div>
+
+<div class="password-div">
+<img src="Images/Lock.svg" id="password-svg">
+<input type="password" id="password-input" placeholder="Password" minlength="5" required>
+<img src="Images/Eye-Close.svg" class="toggle-password" id="toggle-password1">
+  </div>
+  </div>
+
+<p id="forgot-password-p">Forgot Password?</p>
+
+  <div class="signin-button-div">
+<button id="signin-button">Sign In</button>
+  </div>
+</form>
+<br>
+
+  <div class="signup-div">
+<p id="signup-p">Don't have account yet?</p>
+<a href="Signup.html" id="signup-colored">Sign Up</a>
+  </div>
+<br><br>
+<br>
+  </div>
+  </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+function isInAppBrowser() {
+  let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  return (
+  userAgent.includes("FBAN") || // Facebook App
+  userAgent.includes("FBAV") || // Facebook Messenger
+  userAgent.includes("Instagram") || // Instagram
+  userAgent.includes("Twitter") || // Twitter
+  userAgent.includes("Snapchat") // Snapchat
+);
+}
+
+function openInDefaultBrowser() {
+  let url = window.location.href;
+
+if (navigator.userAgent.includes("Android")) {
+  window.location.href = "intent://" + url.replace(/^https?:\/\//, '') + "#Intent;scheme=https;package=com.android.chrome;end;";
+} else if (navigator.userAgent.includes("iPhone") || navigator.userAgent.includes("iPad")) {
+  window.location.href = "https://"+url.split("://")[1]; // Opens in Safari
+} else {
+  alert("Please open this link in your default browser.");
+}
+}
+
+if (isInAppBrowser()) {
+  let confirmRedirect = confirm("This site is best viewed in your default browser. Open in browser?");
+if (confirmRedirect) {
+openInDefaultBrowser();
+}
+}
+});
+  </script>
+
+  <script>
+document.querySelectorAll(".toggle-password").forEach(icon => {
+icon.addEventListener("click", function() {
+let pass1 = document.getElementById("password-input");
+let icon1 = document.getElementById("toggle-password1");
+
+if (pass1.type === "password") {
+  pass1.type = "text";
+  icon1.src = "Images/Eye-Open.svg";
+} else {
+  pass1.type = "password";
+  icon1.src = "Images/Eye-Close.svg";
+}
+});
+});
+  </script>
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+  var loggedIn = localStorage.getItem("quicksubLoggedIn");
+if (loggedIn) {
+//  window.location.href = "index.html";
+}
+
+
+
+var quicksubPhoneNumber, quicksubEmailAddress, quicksubNickName, quicksubFullName, quicksubPassword = "";
+var quicksubPin = 1234;
+
+signinForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var Email = document.getElementById("phone-email-input").value;
+  var Password = document.getElementById("password-input").value;
+
+if (Email === "paystacktest@gmail.com" && Password === "PaystackTest"){
+  localStorage.setItem("quicksubLoggedIn", true);
+  localStorage.setItem("quicksubEmailAddress", Email);
+  localStorage.setItem("quicksubPassword", Password);
+  localStorage.setItem("quicksubPhoneNumber", "08123456789");
+  localStorage.setItem("quicksubNickName", "Paystack");
+  localStorage.setItem("quicksubFullName", "Paystack Test");
+  localStorage.setItem("quicksubPin", quicksubPin);
+}
+
+});
+
+
+});
+
+
+
+
+
+let loggedIn = null;
+var scrollUp = document.getElementById("scroll-up");
+var errorDiv = document.querySelector(".error-div");
+var errorP = document.getElementById("error-p");
+var errorDescription = document.getElementById("error-description");
+var forgotPassword = document.getElementById("forgot-password-p");
+
+function showError() {
+  scrollUp.click();
+  errorDiv.style.display = "block";
+  errorDiv.style.top = "-100px";
+setTimeout(function() {
+  errorDiv.style.top = "10px";
+}, 10);
+setTimeout(function() {
+  errorDiv.style.top = "-100px";
+setTimeout(function() {
+  errorDiv.style.display = "none";
+}, 500); // wait for 0.5s for the slide-up animation to complete
+}, 5000); // wait for 3s before sliding up
+errorP.textContent = "Error!";
+}
+
+forgotPassword.addEventListener("click", function() {
+  showError();
+  errorDescription.innerHTML = 'Failed to reach the server, please try again later or <a href="Signup.html" style="font-size: 16px;"><b>Create a new account</b></a>.';
+});
+
+signinForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var phoneOrEmail = document.getElementById("phone-email-input").value;
+  var Password = document.getElementById("password-input").value;
+
+  var storedPhone = localStorage.getItem("quicksubPhoneNumber");
+  var storedEmail = localStorage.getItem("quicksubEmailAddress");
+  var storedPassword = localStorage.getItem("quicksubPassword");
+
+if ((phoneOrEmail === storedPhone || phoneOrEmail === storedEmail) && Password === storedPassword) {
+  showError();
+  errorDiv.style.color = "#000";
+  errorDescription.style.color = "#000";
+  errorDescription.textContent = "Logged In Successfully";
+  errorP.textContent = "Successful!";
+  errorDiv.style.background = "linear-gradient(to right, #4D1DFF 3%, #46974A 3%)";
+  errorDiv.style.backgroundSize = "100% 100%";
+  var loggedIn = true;
+  localStorage.setItem("quicksubLoggedIn", "true");
+  window.location.href = "https://bennyboy10.github.io/QuickSub/index.html";
+} else {
+  showError();
+  errorDescription.textContent = "Incorrect Username/Password";
+}
+});
+
+  </script>
+
+</body>
+</html>

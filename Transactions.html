@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Transactions.css">
+
+  <title>Transactions - QuickSub</title>
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="top">
+<!-- <a href="index.html" id="left-arrow">&#x276E;</a> -->
+<h2 id="transactions-top-h">Transactions</h2>
+  </div>
+<br><br>
+
+  <div class="balances-div">
+  <div class="available-balance-div">
+<p id="available-balance-p">AVAILABLE BALANCE</p>
+<h2 id="balance-h">{&#8358;}</h2>
+  </div>
+  </div>
+<br><br>
+<br><br>
+<br><br>
+
+
+  <div class="recent-transactions-div">
+<h2 id="all-transactions-h">All Transactions</h2>
+  <div class="receipts-home" id="transaction-list">
+<!-- Transactions will be added here dynamically -->
+  </div>
+<br>
+  </div>
+
+  <footer>
+<p id="copyright-claim-p">Copyright &copy; QuickSub 2025. All Rights Reserved.</p>
+  </footer>
+<br><br>
+<br>
+
+  <nav class="navbar">
+<a href="index.html" class="nav-item">
+<i class="fas fa-home"></i>
+</a>
+<a href="Transactions.html" class="nav-item active">
+<i class="fas fa-exchange-alt"></i>
+</a>
+<a href="All-Services.html" class="nav-item">
+<i class="fas fa-grip"></i>
+</a>
+<a href="Contact-Us.html" class="nav-item">
+<i class="fas fa-comments"></i>
+</a>
+<a href="Account-Settings.html" class="nav-item">
+<i class="fas fa-user-gear"></i>
+</a>
+  </nav>
+  </div>
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+var mainBalance = parseInt(localStorage.getItem("quicksubMainBalance"))  || 0;
+var balanceH = document.getElementById("balance-h");
+function setTotalBalance() {
+  balanceH.innerHTML = `&#8358;${mainBalance.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+}
+setTotalBalance();
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  let navItems = document.querySelectorAll(".nav-item");
+
+  navItems.forEach(item => {
+if (item.href === window.location.href) {
+  document.querySelector(".active")?.classList.remove("active");
+  item.classList.add("active");
+}
+});
+});
+
+
+// Function to load transactions from localStorage and display them
+function loadTransactions() {
+  let transactionList = document.getElementById("transaction-list");
+  let transactions = JSON.parse(localStorage.getItem("quicksubTransactions")) || [];
+
+// Clear the list before reloading
+  transactionList.innerHTML = "";
+
+// Loop through transactions and create HTML for each
+transactions.reverse().forEach(transaction => {
+  let transactionDiv = document.createElement("div");
+  transactionDiv.classList.add("transaction-item");
+
+// Extract network name (MTN, Airtel, Glo, 9Mobile) for the logo
+let network = transaction.type.split(" ")[0];
+let networkLogo = `Images/${network}-Logo.jpg`;
+
+// Format transaction HTML with session ID
+transactionDiv.innerHTML = `
+  <div class="transaction-img-div">
+<img src="${networkLogo}" class="transaction-img">
+  </div>
+  <div class="margined-text-div">
+  <div class="transaction-name-and-amount">
+<p class="transaction-name">${transaction.type}</p>
+<p class="transaction-amount" style="${['Funding Wallet', 'Welcome Bonus'].includes(transaction.type) ? 'color: #00B875;' : ''}">
+  ${['Funding Wallet', 'Welcome Bonus'].includes(transaction.type) ? '+' : '-'}&#8358;${Number(transaction.amount.replace(/[^\d]/g, '')).toLocaleString()}
+</p>
+  </div>
+  <div class="phone-number-div">
+<p class="phone-number">${transaction.number}</p>
+  </div>
+  <div class="transaction-status-and-time">
+<p class="transaction-time">${transaction.time}</p>
+<p class="transaction-status">Completed</p>
+  </div>
+  <!--<div class="session-id-div">
+<p class="session-id">Session ID: ${transaction.sessionID || "Not Available"}</p>
+  </div> -->
+<hr class="seperator">
+  </div>
+`;
+
+// Make each transaction clickable
+transactionDiv.addEventListener("click", function() {
+  localStorage.setItem("selectedTransaction", JSON.stringify(transaction));
+  window.location.href = "Individual-Receipt.html";
+});
+
+// Append the transaction to the list
+transactionList.appendChild(transactionDiv);
+});
+}
+
+// Load transactions when the page loads
+window.addEventListener("DOMContentLoaded", loadTransactions);
+
+  </script>
+
+</body>
+</html>

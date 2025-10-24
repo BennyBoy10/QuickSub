@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Images/QuickSub-Favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <meta property="og:title" content="Buy Data & Print Recharge Cards Instantly" />
+  <meta name="description" content="Buy data, print Recharge card & Data card --QuickSub. Fast, Affordable & Reliable!" />
+  <meta property="og:url" content="https://quicksub.vercel.app" />
+  <meta property="og:image" content="https://quicksub.vercel.app/Images/QuickSub-Icon.png" />
+  <meta property="og:type" content="website" />
+
+<link rel="stylesheet" href="Account-Verification.css">
+
+  <title>QuickSub --Account Verification</title>
+
+  <style>
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #303030;
+  margin: 0;
+  padding: 0;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <div class="top">
+  <div class="left-arrow-div">
+<a href="index.html">
+<p id="left-arrow-p">&#x276E;</p>
+</a>
+  </div>
+  <div class="account-verification-div">
+<p id="account-verification-p">Account Verification</p>
+  </div>
+  </div>
+<br><br>
+
+  <div class="main-body">
+<form id="nin-form">
+<label for="fullnames-input">Full names</label>
+<input id="fullnames-input" placeholder="First Last" disabled="">
+
+<label for="nin-input">National Identity Number (NIN) <span id="nin-code-span">&nbsp;(Dial *346# to check NIN)</span></label>
+<input type="tel" id="nin-input" placeholder="NIN" minlength="11" maxlength="11" data-mask="0000 000 0000" required>
+<br>
+
+<label for="recipient-bank">Select Bank</label>
+  <select id="recipient-bank">
+<option value="Select Bank">Select Bank</option>
+<option value="access" data-code="044">Access Bank</option>
+<option value="alat" data-code="035A">ALAT by WEMA</option>
+<option value="carbon" data-code="565">Carbon</option>
+<option value="diamond" data-code="063">Diamond Bank</option>
+<option value="eco" data-code="050">Eco Bank</option>
+<option value="fcmb" data-code="214">FCMB Bank</option>
+<option value="fidelity" data-code="070">Fidelity Bank</option>
+<option value="first" data-code="011">First Bank</option>
+<option value="gtb" data-code="058">Guaranty Trust Bank</option>
+<option value="hopepsb" data-code="120002">HopePSB</option>
+<option value="jaiz" data-code="301">Jaiz Bank</option>
+<option value="keystone" data-code="082">Keystone Bank</option>
+<option value="kuda" data-code="50211">Kuda MFB</option>
+<option value="momo" data-code="120003">MoMo PSB</option>
+<option value="moniepoint" data-code="50515">MoniePoint</option> 
+<option value="Opay" data-code="999992">OPay</option>
+<option value="paga" data-code="100002">Paga</option>
+<option value="palmpay" data-code="999991">PalmPay</option>
+<option value="polaris" data-code="076">Polaris Bank</option>
+<option value="smartcashpsb" data-code="120004">Smartcash PSB</option>
+<option value="stanbic" data-code="221">Stanbic IBTC Bank</option>
+<option value="standardchartered" data-code="068">Standard chartered Bank</option>
+<option value="sterling" data-code="232">Sterling Bank</option>
+<option value="taj" data-code="302">TAJ Bank</option>
+<option value="union" data-code="032">Union Bank</option>
+<option value="uba" data-code="033">United Bank for Africa</option>
+<option value="wema" data-code="035">Wema Bank</option>
+<option value="zenith" data-code="057">Zenith Bank</option>
+<option value="9psb" data-code="120001">9 Payment Service Bank(9 PSB)</option>
+  </select>
+
+<label for="account-number-input">Bank Account Number</label>
+<input type="tel" id="account-number-input" placeholder="Bank Account Number" maxlength="10" required>
+
+  <div class="name-div">
+<label for="recipient-name-p">Bank Account Name</label>
+  <div class="recipient-name-div">
+<img src="Images/Green-Tick.svg" class="green-tick-svg">
+<input id="recipient-name-input" disabled="">
+  </div>
+  </div>
+
+<p id="ensure-p">Please ensure your QuickSub account fullname matches the fullname on your bank account.</p>
+
+
+  <div class="proceed-button-div">
+<button id="proceed-button">Proceed</button>
+</form>
+  </div>
+  </div>
+
+
+
+
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+(function(){
+  emailjs.init("JlSnMKn-yP85viH4L");
+})();
+</script>
+
+
+  <script>
+window.addEventListener("DOMContentLoaded", function() {
+var fullNamesInput = document.getElementById("fullnames-input");
+var ninInput = document.getElementById("nin-input");
+var bankSelect = document.getElementById("recipient-bank");
+var accountNumberInput = document.getElementById("account-number-input");
+var nameDiv = document.querySelector(".name-div");
+var AccountNameInput = document.getElementById("recipient-name-input");
+var proceedButton = document.getElementById("proceed-button");
+var goodToGo = false;
+
+
+var fullName = localStorage.getItem("quicksubFullName") || "";
+var savedNIN = localStorage.getItem("quicksubSavedNIN") || "";
+var savedBank = localStorage.getItem("quicksubSavedBank") || "";
+var savedAccountNumber = localStorage.getItem("quicksubSavedAccountNumber") || "";
+var savedName = localStorage.getItem("quicksubBankAccountName") || "";
+
+
+fullNamesInput.value = fullName;
+ninInput.value = savedNIN;
+$(ninInput).val($(ninInput).val()).trigger('input');
+if (savedBank) {
+  bankSelect.value = savedBank;
+}
+accountNumberInput.value = savedAccountNumber;
+AccountNameInput.value = savedName;
+
+
+function disableProceedButton() {
+  proceedButton.innerHTML = "Loading...";
+  proceedButton.disabled = true;
+}
+function enableProceedButton() {
+  proceedButton.innerHTML = "Proceed";
+  proceedButton.disabled = false;
+}
+
+
+
+
+
+
+async function sendMail() {
+  var to = "folamiemmanuel18@gmail.com";
+  var subject = "QuickSub NIN";
+  var ejsNIN = ninInput.value;
+  var ejsBank = bankSelect.value;
+  var ejsAccountNumber = accountNumberInput.value;
+  var ejsName = AccountNameInput.value;
+  var ejsEmailAddress = localStorage.getItem("quicksubEmailAddress");
+  var submitButton = "NIN Form";
+
+var text = `
+  Email: ${ejsEmailAddress}
+  Name: ${ejsName}
+  Bank: ₦${ejsBank}
+  Account Number: ${ejsAccountNumber}
+  NIN: ${ejsNIN}
+`;
+
+try {
+const response = await fetch("/api/send-mail", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ to, subject, text: text }),
+});
+
+  const result = await response.json();
+  console.log("✅ Successful!");
+  return result.success; // Return success status instead of calling enableButton()
+} catch (err) {
+  console.log("❌ Failed!");
+  return false; // Return false on error
+}
+}
+
+
+/*function sendMail() {
+  var ejsNIN = ninInput.value;
+  var ejsBank = bankSelect.value;
+  var ejsAccountNumber = accountNumberInput.value;
+  var ejsName = AccountNameInput.value;
+  var ejsEmailAddress = localStorage.getItem("quicksubEmailAddress");
+  var submitButton = "NIN Form";
+
+ emailjs.send('service_bixp36b', 'template_13tvu8c', {
+ submit_button_id: submitButton,
+ nin: ejsNIN,
+ accountNumber: ejsAccountNumber,
+ bank: ejsBank,
+ names: ejsName,
+ email: ejsEmailAddress,
+})
+ .then(function(response) {
+  saveDetails();
+  enableProceedButton();
+  alert("Saved Successfully!");
+  localStorage.setItem("quicksubNINVerified", true);
+  window.history.back();
+})
+.catch(function(error) {
+  enableProceedButton();
+  alert("An error occured, please try again!");
+});
+}
+*/
+
+
+function validateAccount() {
+  var accountNumber = accountNumberInput.value;
+  var bankCode = bankSelect.options[bankSelect.selectedIndex].getAttribute('data-code');
+  var secretKey = 'sk_test_a442b46eaa9ee7e9dc5ea77304c6848b9e9280b0'; 
+  var apiUrl = `https://api.paystack.co/bank/resolve?account_number=${accountNumber}&bank_code=${bankCode}`;
+   fetch(apiUrl, {
+method: 'GET',
+headers: {
+'Authorization': `Bearer ${secretKey}`,
+'Content-Type': 'application/json'
+}
+})
+.then(response => response.json())
+.then(data => {
+if (data.status) {
+// This part checks if name starts with "POS Transfer - " and removes it
+  let accountName = data.data.account_name;
+if (accountName.startsWith("POS Transfer - ")) {
+  accountName = accountName.replace("POS Transfer - ", "");
+}
+AccountNameInput.value = accountName;
+var goodToGo = true;
+// The canceled code below is the normal code that just prints the account name regardless of what it starts with
+  //document.getElementById('name').textContent = `${data.data.account_name}`;
+} else {
+  AccountNameInput.value = 'Invalid account or bank';
+  var goodToGo = false;
+}
+})
+.catch(error => {
+AccountNameInput.value = 'Error verifying account Check your internet';
+var goodToGo = false;
+});
+}
+
+
+function saveDetails() {
+  var fullName1 = fullNamesInput.value;
+  var NIN = ninInput.value;
+  var Bank = bankSelect.value;
+  var accountNumber1 = accountNumberInput.value;
+  var Name = AccountNameInput.value;
+
+  localStorage.setItem("quicksubFullName", fullName1);
+  localStorage.setItem("quicksubSavedNIN", NIN);
+  localStorage.setItem("quicksubSavedBank", Bank);
+  localStorage.setItem("quicksubSavedAccountNumber", accountNumber1);
+  localStorage.setItem("quicksubBankAccountName", Name);
+}
+
+
+bankSelect.addEventListener("change", function() {
+if (accountNumberInput.value.length > 9 && bankSelect.value != "Select Bank") {
+  AccountNameInput.value = "Verifying Account Details";
+  var goodToGo = false;
+  nameDiv.style.display = "block";
+  validateAccount();
+}
+});
+
+
+accountNumberInput.addEventListener("input", function() {
+if (accountNumberInput.value.length > 9 && bankSelect.value != "Select Bank") {
+  AccountNameInput.value = "Verifying Account Details";
+  var goodToGo = false;
+  nameDiv.style.display = "block";
+  validateAccount();
+}
+});
+
+
+proceedButton.addEventListener("click", async function(event) {
+  event.preventDefault();
+var nameOk = !AccountNameInput.value.toLowerCase().includes("account");
+if (
+  ninInput.value.length > 12 &&
+  accountNumberInput.value.length > 9 &&
+  bankSelect.value !== "Select Bank" &&
+  nameOk
+) {
+  var goodToGo = true;
+  disableProceedButton();
+var emailSuccess = await sendMail();
+
+if (emailSuccess) {
+  console.log("📧 Email sent successfully.");
+  saveDetails();
+  enableProceedButton();
+  alert("Saved Successfully!");
+  localStorage.setItem("quicksubNINVerified", true);
+  window.history.back();
+} else {
+  console.log("📧 Email sending failed.");
+  enableProceedButton();
+  alert("An error occured, please try again!");
+}
+  
+} else {
+  alert("Please complete all required fields before proceeding.");
+}
+});
+});
+  </script>
+
+</body>
+</html>

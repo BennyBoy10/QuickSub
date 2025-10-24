@@ -1,0 +1,424 @@
+
+.container {
+ margin: 0 auto;
+ width: 95%;
+ padding: 7px;
+ border: 1px solid transparent;
+ border-radius: 8px;
+ color: #FFF;
+ background-color: #303030;
+}
+.top {
+  position: fixed;
+  display: flex;
+  margin: -7px;
+  padding: 0 10px 0 10px;
+  top: 0;
+  width: 94%;
+  border: none;
+  border-bottom: 1px solid #AAAAAA;
+  background-color: #303030;
+  z-index: 101;
+}
+.deposit-money-div {
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.error-div {
+  position: relative;
+  animation: drop-down 0.5s ease-in-out;
+}
+@keyframes drop-down {
+0% {
+  top: -100px;
+  opacity: 0;
+}
+100% {
+  top: 0;
+  opacity: 1;
+}
+}
+
+.error-div {
+  display: none;
+  position: absolute;
+  padding: 0 10px 15px 0;
+  width: 92%;
+  top: 10px;
+  left: 10px;
+  border-radius: 10px;
+  color: #FFF;
+  background: linear-gradient(to right, #FFD700 3%, #00A86B 3%);
+  background-size: 100% 100%;
+  overflow: hidden;
+  z-index: 1000;
+}
+.error-svg-div {
+  margin: 40px 0 0 15px;
+  width: 7%;
+}
+#error-svg {
+  width: 100%;
+}
+.error-div-texts {
+  display: flex;
+  flex-direction: column;
+  margin-top: -50px;
+  margin-left: 50px;
+}
+.error-div-texts * {
+  margin: 0;
+}
+#error-p {
+  font-size: 17px;
+  font-weight: bold;
+}
+#error-description {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.bank-transfer-div {
+  padding: 15px 10px 15px 15px;
+  border-radius: 15px;
+  background-color: #373737;
+}
+#bank-transfer-p {
+  font-size: 20px;
+  font-weight: bold;
+}
+.transfer-funds p {
+  margin: 0;
+}
+#receive-funds-p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #AAAAAA;
+}
+#min-max-p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: orange;
+}
+
+#generate-account-button {
+  display: block;
+  margin: 15px auto;
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  color: #E0E0E0;
+  background-color: #00A86B;
+}
+
+.bank-accounts-div {
+  display: flex;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 0px 10px;
+  width: 87%;
+  width: 83%;
+  border-radius: 10px;
+  background: linear-gradient(to right, #FF5722, #D84315);
+}
+#guide1 {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #E0E0E0;
+}
+.bottom-account-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px 0 5px 0;
+  padding: 0;
+}
+.left-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 48.5%;
+  height: 90px;
+}
+.left-div * {
+  margin-top: -40px;
+}
+.right-div * {
+  margin-top: -10px;
+}
+.right-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  width: 48.5%;
+  height: 90px;
+}
+.slim-texts {
+  font-size: 12px;
+}
+#bank-name-p {
+  margin-top: 0;
+}
+#bank-name {
+  margin-top: 0;
+  text-align: left;
+  font-size: 17px;
+  font-weight: bold;
+}
+#account-number {
+  text-align: left;
+  margin-top: -8px;
+  font-size: 17px;
+  font-weight: bold;
+}
+#account-name-p {
+  text-align: left;
+  margin-top: -6px;
+  font-size: 17px;
+  font-size: 12px;
+  font-weight: bold;
+}
+#tap-to-copy {
+  margin-top: 5px;
+  margin-bottom: 7px;
+  font-size: 11px;
+  text-align: center;
+  color: #000;
+}
+
+
+
+button {
+  width: 22%;
+  height: 26px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  color: #E0E0E0;
+  background-color: #00A86B;
+}
+
+.funding-option-div {
+  display: flex;
+  align-items: center;
+  color: #d7b607;
+}
+.seperator2 {
+  width: 14%;
+  border: none;
+  height: 0.1px;
+  color: grey;
+  background-color: grey;
+}
+
+.alternate-payment-methods-div {
+  display: flex;
+  margin-top: 0px;
+  padding: 17px 15px 20px 15px;
+  border-radius: 15px;
+  gap: 10px;
+  background-color: #373737;
+}
+#alternate-payment-methods-svg {
+  width: 35px;
+}
+.alternate-payment-methods-texts {
+  margin-left: -5px;
+}
+.alternate-payment-methods-texts p {
+  margin: 2px;
+}
+#alternate-payment-methods-p {
+  font-weight: 500;
+}
+.hot-deposit-reward {
+  font-size: 10px;
+  color: #00B875;
+}
+#payment-methods-names {
+  font-size: 12px;
+  color: #AAAAAA;
+}
+
+.vitapay-epin-div {
+  display: flex;
+  padding: 17px 15px 20px 15px;
+  border-radius: 15px;
+  gap: 10px;
+  background-color: #373737;
+}
+#vitapay-epin-svg {
+  width: 35px;
+}
+.vitapay-epin-texts {
+  margin-left: -5px;
+}
+.vitapay-epin-texts p {
+  margin: 3px;
+}
+#vitapay-epin-p {
+  font-weight: 500;
+}
+#feature-coming-soon {
+  font-size: 12px;
+  color: #AAAAAA;
+}
+
+.main-body {
+  display: block;
+  display: none;
+}
+.manual-section {
+  display: none;
+  display: block;
+}
+
+.manual-top {
+  position: fixed;
+  display: flex;
+  margin: -7px;
+  padding: 0 10px 0 10px;
+  top: 0;
+  width: 94%;
+  border-bottom: 1px solid #AAAAAA;
+  background-color: #303030;
+  z-index: 101;
+}
+.top-text-div {
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.alternate-deposit-method-div {
+  display: block;
+  margin: 0 auto;
+  width: 92%;
+  padding: 1px 10px;
+  border-radius: 15px;
+  background-color: #383838;
+}
+.alternate-deposit-method-div * {
+  margin-bottom: 1px;
+}
+#alternate-deposit-method-h {
+  font-size: 22px;
+}
+#alternate-deposit-method-h, #fund-with-avai-pay-met {
+  margin-left: 10px;
+}
+#fund-with-avai-pay-met {
+  margin-top: 1px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #9F9F9F;
+}
+.svg-div {
+  /*position: absolute;
+  margin-top: -45px;
+  right: 40px;
+  width: 8%;*/
+  display: none;
+  margin-left: auto;
+}
+#wallet-svg {
+  width: 25px;
+}
+
+input, select {
+  margin-top: 10px;
+  padding: 0 10px;
+  width: 93%;
+  height: 45px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  border: 1px solid #FFF;
+  color: #FFF;
+  background-color: #464646;
+}
+input:focus, select:focus {
+  border: 2px solid #FFF;
+}
+input::placeholder {
+  font-size: 16px;
+  color: grey;
+}
+#minimum-deposit-text {
+  display: none;
+  font-size: 12px;
+  text-align: center;
+  color: #d7b607;
+}
+
+.checkbox-div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+select {
+  width: 100%;
+}
+#checkbox {
+  appearance: none; /* Removes default checkbox styling */
+  width: 18px;
+  height: 18px;
+  border: 1px solid #FFF;
+  border-radius: 45%;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+#checkbox-label {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #FFF;
+}
+#checkbox:checked {
+  background-color: #383838;
+  border: 1px solid #FFF;
+}
+#checkbox:checked::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#add-funds-button {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  color: #E0E0E0;
+  background-color: #00A86B;
+}
+button:disabled {
+  opacity: 0.6;
+  color: #FFF;
+  background-color: grey;
+}
+
+
