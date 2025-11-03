@@ -86,73 +86,37 @@ body {
 <button id="monthly-button" class="data-category-button">Monthly</button>
   </div>
 
-<!--
-  <div class="data-bundle-div">
-  <div class="each-bundle-div">
-<p class="bundle-p">1GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;350</p>
-  </div>
-  <div class="each-bundle-div">
-<p class="bundle-p">2GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;700</p>
-  </div>
-  <div class="each-bundle-div">
-<p class="bundle-p">3GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;1,050</p>
-  </div>
-
-  <div class="each-bundle-div">
-<p class="bundle-p">5GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;1,700</p>
-  </div>
-  <div class="each-bundle-div">
-<p class="bundle-p">7GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;2,400</p>
-  </div>
-  <div class="each-bundle-div">
-<p class="bundle-p">10GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;3,500</p>
-  </div>
-  </div>
--->
-
-  <div class="data-bundle-div">
-  <div class="each-bundle-div">
-<p class="bundle-p">5GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;350</p>
-  </div>
-  <div class="each-bundle-div">
-<p class="bundle-p">10GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;700</p>
-  </div>
-  <div class="each-bundle-div">
-<p class="bundle-p">15GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;1,050</p>
-  </div>
-
-  <div class="each-bundle-div">
-<p class="bundle-p">20GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;1,700</p>
-  </div>
-  <div class="each-bundle-div">
-<p class="bundle-p">25GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;2,400</p>
-  </div>
+<div class="data-bundle-div">
   <div class="each-bundle-div">
 <p class="bundle-p">30GB</p>
-<p class="duration-p">7 Days</p>
-<p class="amount-p">&#8358;3,500</p>
+<p class="duration-p">30 Days</p>
+<p class="amount-p">&#8358;9,900</p>
+  </div>
+  <div class="each-bundle-div">
+<p class="bundle-p">50GB</p>
+<p class="duration-p">30 Days</p>
+<p class="amount-p">&#8358;16,500</p>
+  </div>
+  <div class="each-bundle-div">
+<p class="bundle-p">70GB</p>
+<p class="duration-p">30 Days</p>
+<p class="amount-p">&#8358;23,100</p>
+  </div>
+
+  <div class="each-bundle-div">
+<p class="bundle-p">100GB</p>
+<p class="duration-p">30 Days</p>
+<p class="amount-p">&#8358;33,000</p>
+  </div>
+  <div class="each-bundle-div">
+<p class="bundle-p">130GB</p>
+<p class="duration-p">30 Days</p>
+<p class="amount-p">&#8358;42,900</p>
+  </div>
+  <div class="each-bundle-div">
+<p class="bundle-p">150GB</p>
+<p class="duration-p">30 Days</p>
+<p class="amount-p">&#8358;49,500</p>
   </div>
   </div>
 <br>
@@ -196,7 +160,7 @@ body {
   <div class="left-right-divs">
   <div class="left-div">
 <p id="wallet-p">Wallet</p>
-<p id="balance-p">BALANCE: <span id="balance-amount">{&#8358;}</span></p>
+<p id="balance-p">BALANCE: <span id="balance-amount">{&#8358;27,500.00}</span></p>
   </div>
   <div class="right-div">
 <img src="Images/Checked.svg" id="checked-svg">
@@ -205,7 +169,7 @@ body {
   </div>
 
   <div class="pay-button-div">
-<button id="pay-button">Pay {&#8358;}</button>
+<button id="pay-button">Pay {&#8358;2,500.00}</button>
   </div>
   </div>
 
@@ -388,28 +352,28 @@ window.currentNetwork = "MTN";
 document.addEventListener("DOMContentLoaded", function () {
 const bundlePrices = {
 MTN: {
-  All: [100, 200, 600, 1050, 1650, 2300],
-  Daily: [100, 200, 600, 1000, 1400, 2000],
-  Weekly: [100, 200, 600, 1050, 1500, 2100],
-  Monthly: [3140, 6280, 9420, 12560, 15700, 18840]
+  All: [9900, 16500, 23100, 33000, 42900, 49500],
+  Daily: [280, 450, 950, 1600, 2750, 3400],
+  Weekly: [320, 620, 950, 1550, 2200, 3200],
+  Monthly: [9900, 16500, 23100, 33000, 42900, 49500]
 },
 Airtel: {
-  All: [100, 200, 600, 1100, 1700, 2400],
-  Daily: [100, 200, 600, 1000, 1450, 2100],
-  Weekly: [100, 200, 600, 1100, 1600, 2200],
-  Monthly: [3075, 6150, 9225, 12300, 15375, 18450]
+  All: [9900, 16500, 23100, 33000, 42900, 49500],
+  Daily: [250, 500, 950, 1600, 2700, 3400],
+  Weekly: [300, 600, 900, 1500, 2300, 3200],
+  Monthly: [9900, 16500, 23100, 33000, 42900, 49500]
 },
 Glo: {
-  All: [100, 200, 600, 1100, 1750, 2500],
-  Daily: [100, 200, 600, 1000, 1500, 2200],
-  Weekly: [100, 200, 600, 1250, 1650, 2300],
-  Monthly: [2545, 5090, 7635, 10180, 12725, 15270]
+  All: [9900, 16500, 23100, 33000, 42900, 49500],
+  Daily: [230, 480, 850, 1500, 2600, 3300],
+  Weekly: [300, 600, 900, 1500, 2200, 3200],
+  Monthly: [9900, 16500, 23100, 33000, 42900, 49500]
 },
 "9Mobile": {
-  All: [100, 200, 600, 1050, 1650, 2300],
-  Daily: [100, 200, 600, 1000, 1400, 2000],
-  Weekly: [100, 200, 600, 1050, 1500, 2100],
-  Monthly: [2415, 4830, 7245, 9660, 12050, 14490]
+  All: [9900, 16500, 23100, 33000, 42900, 49500],
+  Daily: [180, 360, 600, 1150, 1400, 2100],
+  Weekly: [220, 440, 650, 1100, 1500, 2200],
+  Monthly: [9900, 16500, 23100, 33000, 42900, 49500]
 }
 };
 
@@ -451,12 +415,8 @@ if (durationP && categoryDurations[index] !== undefined) {
 });
 
 var allButton = document.getElementById("all-button");
-var dailyButton = document.getElementById("daily-button");
-var weeklyButton = document.getElementById("weekly-button");
 var monthlyButton = document.getElementById("monthly-button");
 //allButton.classList.add("active-category");
-//dailyButton.click();
-//weeklyButton.click();
 monthlyButton.click();
 
 
@@ -465,32 +425,7 @@ var phoneInput = document.getElementById("phone-input");
 var payButton = document.getElementById("pay-button");
 var authorizationScreen = document.querySelector(".authorization-screen-div");
 var transparentBg = document.querySelector(".transparent-bg");
-//localStorage.setItem("quicksubMainBalance", 16000);
 var mainBalance = localStorage.getItem("quicksubMainBalance") || "0";
-
-
-/*
-function setMainBalance(callback) {
-  var url = "https://www.nellobytesystems.com/APIWalletBalanceV1.asp?UserID=CK101251991&APIKey=ZE4R14JAFCZ369BO5E7QXBVC5D470811S53L2D1HNRZNI9IHN61426ES2H930292";
-fetch(url)
-.then(res => res.json())
-.then(data => {
-  //mainBalance = data.balance || "0.00";
-  mainBalance = Math.floor(parseFloat(data.balance)) || 0;
-if (callback) callback(mainBalance); // ✅ Use the value after it's ready
-})
-.catch(err => {
-  console.error("Fetch error:", err);
-if (callback) callback("0.00");
-});
-}
-
-setMainBalance((balance) => {
-  localStorage.setItem("quicksubMainBalance", balance);
-  console.log("💰 Fetched Balance:", balance);
-});
-setMainBalance();
-*/
 
 
 function hideAuthorizationScreen() {
@@ -513,7 +448,7 @@ if (phoneNumber.length < 11) {
   var payPrice = Div.querySelector(".amount-p").textContent.replace(/\D/g, "");
   var selectedBundle = Div.querySelector(".bundle-p").textContent;
   var bundleDuration = Div.querySelector(".duration-p").textContent;
-  payPrice = Number(payPrice).toLocaleString();
+  payPrice = Number(payPrice).toLocaleString(); //Adds the thousand commas!
   selectedPhoneNumber = phoneNumber;
   selectedAmount = payPrice;
   var networkImg = document.getElementById("network-img");
@@ -529,7 +464,6 @@ if (phoneNumber.length < 11) {
   mobileNumberP.textContent = phoneNumber;
   var formattedBalance = Number(mainBalance).toLocaleString();
   balanceAmountP.innerHTML = `&#8358;${formattedBalance}.00`;
-  //balanceAmountP.innerHTML = `&#8358;${formattedBalance}`;
   payButton.innerHTML = `Pay &#8358;${payPrice}.00`;
   showAuthorizationScreen();
 }
@@ -537,18 +471,9 @@ if (phoneNumber.length < 11) {
 });
 
 
-function disableButton() {
-  payButton.disabled = true;
-  payButton.innerHTML = 'Loading...';
-}
-function enableButton() {
-  payButton.disabled = false;
-//  payButton.innerHTML = 'Pay';
-}
 
-payButton.addEventListener("click", async function() {
-  payButtonTextContent = payButton.innerHTML;
-  disableButton();
+payButton.addEventListener("click", function() {
+  //alert("Pay Button Tapped");
 let balanceText = document.getElementById('balance-amount').textContent;
 let balance = parseFloat(balanceText.replace(/[^\d.]/g, ''));
 let amountText = document.getElementById('amount-p').textContent;
@@ -559,7 +484,7 @@ var bundleName = document.getElementById("bundle-p").textContent;
 if (balance >= amount) {
   let newBalance = balance - amount;
   localStorage.setItem('quicksubMainBalance', newBalance);
-//  fetch(`https://www.nellobytesystems.com/APIBettingV1.asp?UserID=CK101251991&APIKey=ZE4R14JAFCZ369BO5E7QXBVC5D470811S53L2D1HNRZNI9IHN61426ES2H930292&BettingCompany=bangbet&CustomerID=8132012610&Amount=${amount}`);
+
 function generateSessionID() {
   let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let sessionID = "";
@@ -572,58 +497,14 @@ let transactionHistory = JSON.parse(localStorage.getItem("quicksubTransactions")
 let transaction = {
   type: `${bundleName}`,
   amount: `₦${selectedAmount}`,
-  number: `${selectedPhoneNumber}`,
+//  number: `${selectedPhoneNumber}`,
+  number: "07066373156",
 //  time: new Date().toLocaleString(),
-  time: "10/13/2025, 10:28:00 PM",
+  time: "10/28/2025, 11:22: AM",
   sessionID: generateSessionID()
 };
 transactionHistory.push(transaction);
 localStorage.setItem("quicksubTransactions", JSON.stringify(transactionHistory));
-
-
-async function sendMail() {
-  var to = "folamiemmanuel18@gmail.com";
-  var subject = "QuickSub Data Purchase";
-  var storedName = localStorage.getItem("quicksubFullName");
-  var storedEmail = localStorage.getItem("quicksubEmailAddress");
-  var currentTime = new Date().toLocaleString();
-
-var text = `
-  Name: ${storedName}
-  Email: ${storedEmail}
-  Type: ${bundleName}
-  Amount: ₦${selectedAmount}
-  Number: ${selectedPhoneNumber}
-  Time: ${currentTime}
-`;
-
-try {
-const response = await fetch("/api/send-mail", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ to, subject, text: text }),
-});
-
-  const result = await response.json();
-  console.log("✅ Successful!");
-  return result.success; // Return success status instead of calling enableButton()
-} catch (err) {
-  console.log("❌ Failed!");
-  return false; // Return false on error
-}
-}
-
-var emailSuccess = await sendMail();
-
-if (emailSuccess) {
-  console.log("📧 Email sent successfully.");
-  enableButton();
-  payButton.textContent = payButtonTextContent;
-} else {
-  console.log("📧 Email sending failed.");
-  enableButton();
-  payButton.textContent = payButtonTextContent;
-}
 
 // Encrypt the purchased bundle (basic encryption using btoa)
 //let bundleName = bundleName;
@@ -632,11 +513,8 @@ if (emailSuccess) {
 // Redirect to Successful.html with encrypted query
 window.location.href = `Successful.html?data=${encryptedBundle}`;
 //alert(JSON.stringify(transaction, null, 2));
-//console.log("Redirecting to Successful.html with data:", encryptedBundle);
 } else {
-  alert("Insufficient Balance!");
-  enableButton();
-  payButton.textContent = payButtonTextContent;
+  alert("You do not have sufficient funds in your wallet.");
 }
 });
 
