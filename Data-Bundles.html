@@ -497,10 +497,10 @@ let transactionHistory = JSON.parse(localStorage.getItem("quicksubTransactions")
 let transaction = {
   type: `${bundleName}`,
   amount: `₦${selectedAmount}`,
-//  number: `${selectedPhoneNumber}`,
-  number: "07066373156",
+  number: `${selectedPhoneNumber}`,
+//  number: "07066373156",
 //  time: new Date().toLocaleString(),
-  time: "10/28/2025, 11:22: AM",
+  time: "10/28/2025, 11:28:46 AM",
   sessionID: generateSessionID()
 };
 transactionHistory.push(transaction);
