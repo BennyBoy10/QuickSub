@@ -148,10 +148,10 @@ let transaction = {
   type: "Funding Wallet",
   amount: `₦${depositAmount}`,
   number: localStorage.getItem("quicksubPhoneNumber") || "Unknown",
-//  time: new Date().toLocaleString(),
-  time: "10/30/2025, 08:03:36 PM",
-//  status: "Completed",
-  status: "Failed",
+  time: new Date().toLocaleString(),
+//  time: "10/30/2025, 08:03:36 PM",
+  status: "Completed",
+//  status: "Failed",
   sessionID: generateSessionID()
 };
 
