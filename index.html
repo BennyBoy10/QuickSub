@@ -346,7 +346,7 @@ transactionDiv.innerHTML = `
   <div class="transaction-name-and-amount">
 <p class="transaction-name">${transaction.type}</p>
 <!-- <p class="transaction-amount">${transaction.amount}</p> -->
-<p class="transaction-amount" style="${['Funding Wallet', 'Welcome Bonus'].includes(transaction.type) ? 'color: #00B875;' : ''}">
+<p class="transaction-amount" style="${['Funding Wallet', 'Welcome Bonus'].includes(transaction.type) ? 'color: #FFF;' : ''}">
   ${['Funding Wallet', 'Welcome Bonus'].includes(transaction.type) ? '+' : '-'}&#8358;${Number(transaction.amount.replace(/[^\d]/g, '')).toLocaleString()}
 </p>
   </div>
