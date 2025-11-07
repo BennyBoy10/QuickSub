@@ -444,8 +444,8 @@ let transaction = {
   type: `${currentNetwork} Airtime Topup`,
   amount: `₦${selectedAmount}`,
   number: `${selectedPhoneNumber}`,
-//  time: new Date().toLocaleString(),
-  time: "10/28/2025, 11:32:39 AM",
+  time: new Date().toLocaleString(),
+//  time: "10/28/2025, 11:32:39 AM",
   sessionID: generateSessionID()
 };
 transactionHistory.push(transaction);
