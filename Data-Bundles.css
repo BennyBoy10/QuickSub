@@ -168,6 +168,7 @@ input::placeholder {
 .duration-p {
   margin-top: -10px;
   font-size: 12px;
+  color: #AAA;
 }
 .amount-p {
   margin-top: -5px;

@@ -191,7 +191,6 @@ body {
   </nav>
   </div>
 
-
   <script>
 document.addEventListener("DOMContentLoaded", function() {
 localStorage.setItem("quicksubToken0", "true"); // 21/09/2025
@@ -355,10 +354,7 @@ transactionDiv.innerHTML = `
   </div>
   <div class="transaction-status-and-time">
   <p class="transaction-time">${transaction.time}</p>
-<!-- <p class="transaction-status">Completed</p> -->
-<p class="transaction-status" style="${transaction.status === 'Failed' ? 'color: #FFF; background-color: #DC4C41;' : 'color: #FFF; background-color: #00B875;'}">
-  ${transaction.status}
-</p>
+<p class="transaction-status">Completed</p>
   </div>
   <!--<div class="session-id-div">
 <p class="session-id">Session ID: ${transaction.sessionID || "Not Available"}</p>
@@ -376,16 +372,6 @@ transactionDiv.addEventListener("click", function() {
 // Append the transaction to the list
 transactionList.appendChild(transactionDiv);
 });
-
-
-
-
-
-
-
-
-
-
 }
 // Load transactions when the page loads
 window.addEventListener("DOMContentLoaded", loadTransactions);
@@ -394,15 +380,10 @@ window.addEventListener("DOMContentLoaded", loadTransactions);
 
 
 
-
-
   <script>
 window.addEventListener("DOMContentLoaded", function() {
-localStorage.removeItem("quicksubMainBalance");
+//localStorage.removeItem("quicksubMainBalance");
 //localStorage.removeItem("quicksubTransactions");
-
-//localStorage.getItem("Nov-07-2025") || "";
-
 function generateSessionID() {
   let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let sessionID = "";

@@ -146,7 +146,7 @@ body {
 
 <form id="manualDepositForm">
   <div class="amount-input-div">
-<input type="text" id="manual-amount" placeholder="₦100 - ₦99,999" minlength="4" maxlength="10" pattern="₦[1-9]\d{0,2}(,\d{3})*" required>
+<input type="text" id="manual-amount" placeholder="₦100 - ₦99,999" minlength="3" maxlength="10" pattern="₦[1-9]\d{0,2}(,\d{3})*" required>
 
 <select id="dropdownMenu">
 <option value="paystack">Secure Gateway (Paystack)</option>
@@ -257,7 +257,7 @@ window.location.href = `https://paystack.shop/pay/quicksub?amount=${amount}&emai
 */
 
 var alternateDepositMethodH = document.getElementById("alternate-deposit-method-h");
-alternateDepositMethodH.textContent = "Secure Gateway (SW)";
+alternateDepositMethodH.textContent = "Secure Gateway";
 
 function redirectToPaystack() {
   let amount = getRawAmount();
@@ -274,11 +274,11 @@ if (amount >=  100) {
 }
 
 var handler = PaystackPop.setup({
-// PK_Test */ key: "pk_test_3161298d9cf10d17182805fe65a5cba8940e2a74",
+// key: "pk_test_3161298d9cf10d17182805fe65a5cba8940e2a74", // PK_Test
 // EXC-Nellobytes_NG */ key: "pk_live_9024cfcf98710eb4b7dc39df051140c5268f77f4", //PK_Live
 // EXC-Nellobytes_CO */ key: "pk_live_0f24eaac3c3e01aa48d36cafa52b5b91a1aaecee",
 // EXC-Nellobyte_LTD */ key: "pk_live_8c3dce7f323e59926dbd74ed1fa99e3e682d56d9",
-// EXC-Nellobyte_CO */ key: "pk_live_0f24eaac3c3e01aa48d36cafa52b5b91a1aaecee",
+/* EXC-Nellobyte_CO */ key: "pk_live_0f24eaac3c3e01aa48d36cafa52b5b91a1aaecee",
 // EXC-Nellobyte_INC */ key: "pk_live_ec977d536b43f77042702ceab668f15acaeccd16",
 // EXC-VTP */ key: "pk_live_c3867d385e7aedff0c8e426b5e067abce3cc73bd",
 // EXC-NVE */ key: "pk_live_51b77a0476dc6a84116fd99cd6620e18fd4e36e8",
@@ -293,7 +293,7 @@ var handler = PaystackPop.setup({
 // PC5-CWA key: "pk_live_5861a26f27d4f9681ed0c0cff9b63e25446cb5de",
 // PC5-FortunePay */ key: "pk_live_529af740880219159cbf8640371c04db151280b9",
 // PC5-SandWorm key: "pk_live_a7e1f3adf652a34a006a5a221feb83b108b75f41",
-/* PC5-SandWarm_NG */ key: "pk_live_1f3829b568325a23c8e1c52150cadf7e55e0476c",
+// PC5-SandWarm_NG */ key: "pk_live_1f3829b568325a23c8e1c52150cadf7e55e0476c",
 // PC5-SandWorm_LTD */ key: "pk_live_0c199e188a02da25e239cbc15ba5c63c4a916bdb",
 // PC5-SandWorm_INC */ key: "pk_live_c38e267d7b5c0862a099ff9f4e66cef9efdfa664",
 // PC5-FortunePay_NG */ key: "pk_live_77c3994f0e74d272c51cd975f709efedc8d54e1a",
@@ -374,9 +374,9 @@ document.getElementById("manualDepositForm").addEventListener("submit", function
   let rawAmount = getRawAmount();
   let minimumDepositP = document.getElementById("minimum-deposit-text");
 
-  // Ensure the amount is at least  100
-if (parseInt(rawAmount, 10) < 100 || isNaN(parseInt(rawAmount, 10))) {
-  //alert("Please enter a valid amount of at least ₦100.");
+  // Ensure the amount is at least  10
+if (parseInt(rawAmount, 10) < 10 || isNaN(parseInt(rawAmount, 10))) {
+  //alert("Please enter a valid amount of at least ₦10.");
   minimumDepositP.style.display = "block";
   document.getElementById("add-funds-button").disabled = true;
   amountInput.style.border = "1px solid #F47265";

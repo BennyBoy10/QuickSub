@@ -189,7 +189,6 @@
 }
 
 .recent-transactions-div {
-  /* height: 255px; */
   margin-top: -10px;
   padding: 0 20px 5px 20px;
   border-radius: 10px;
@@ -270,7 +269,7 @@
   margin-top: -19px;
 }
 .transaction-status {
-  padding: 3px 7px;
+  padding: 3px;
   font-size: 11px;
   font-weight: 500;
   border-radius: 5px;
@@ -324,4 +323,3 @@ button {
   color: #FFF;
   background-color: #303030;
 }
-
