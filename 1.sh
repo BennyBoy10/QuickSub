@@ -1,7 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 #!/bin/bash
 
-
 echo ""
 echo -e "\e[32mStarting... \e[0m"
 echo ""
